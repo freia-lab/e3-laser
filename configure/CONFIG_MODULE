@@ -1,0 +1,9 @@
+EPICS_MODULE_NAME := laser
+
+E3_MODULE_VERSION := 0.1.0
+E3_MODULE_NAME := laser
+E3_MODULE_SRC_PATH := $(EPICS_MODULE_NAME)
+E3_MODULE_MAKEFILE := $(E3_MODULE_NAME).Makefile
+
+-include $(TOP)/configure/CONFIG_OPTIONS
+-include $(TOP)/configure/CONFIG_MODULE.local
