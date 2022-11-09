@@ -12,4 +12,9 @@ pydev("sys.path.append('$(laser_DIR)')")
 pydev("from getStatus import GetStatus")
 pydev("laser=GetStatus('http://10.1.251.2:20010/v1')")
 
-dbLoadRecords("laser.db", "P=$(P)")
+dbLoadRecords("laser.db", "P=$(P),SCAN=$(SCAN='10 second')")
+
+# Set debugging output level (0 - no output, higher level - more detailed output)
+
+#pydev("laser.debug=0")
+# or pydev("laser.setDebugLvl(1)")

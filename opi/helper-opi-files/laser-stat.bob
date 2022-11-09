@@ -4,10 +4,10 @@
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
-    <text>Laser status</text>
+    <text>  Laser status</text>
     <x use_class="true">20</x>
     <y use_class="true">0</y>
-    <width>260</width>
+    <width>230</width>
     <height use_class="true">50</height>
     <font use_class="true">
       <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
@@ -25,8 +25,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_3</name>
     <text>State:</text>
-    <x>410</x>
-    <y>10</y>
+    <x>20</x>
+    <y>50</y>
     <width>80</width>
     <height>30</height>
     <font>
@@ -37,9 +37,306 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
     <pv_name>$(P)$(S)sState</pv_name>
-    <x>500</x>
-    <y>10</y>
+    <x>90</x>
+    <y>50</y>
+    <width>150</width>
     <height>30</height>
+    <font>
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>160</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>Shutter:</text>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(P)$(S)sShutterOpen</pv_name>
+      <x>120</x>
+      <width>100</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_1</name>
+    <x>20</x>
+    <y>190</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>Output:</text>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>$(P)$(S)sOutput</pv_name>
+      <x>120</x>
+      <width>100</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Power Lock</name>
+    <x>20</x>
+    <y>220</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>Power Lock:</text>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>$(P)$(S)sPwrLock</pv_name>
+      <x>120</x>
+      <width>100</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>250</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>Output Frequency:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(P)$(S)outFreq:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>280</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>Output Energy:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>$(P)$(S)outEnergy:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>310</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>Output Power:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>$(P)$(S)outPwr:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>340</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>Attenuator:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_5</name>
+      <pv_name>$(P)$(S)Atten:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>370</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>Harmonic:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_6</name>
+      <pv_name>$(P)$(S)Harmonic:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>400</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>Pulse Duration:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_7</name>
+      <pv_name>$(P)$(S)PulseLength:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>430</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_13</name>
+      <text>Burst Pulse Count:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_8</name>
+      <pv_name>$(P)$(S)BurstCnt:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_3</name>
+    <x>20</x>
+    <y>130</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_14</name>
+      <text>Errors:</text>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>$(P)$(S)sErr</pv_name>
+      <x>120</x>
+      <width>100</width>
+      <off_label>Closed</off_label>
+      <off_color>
+        <color name="OK" red="61" green="216" blue="61">
+        </color>
+      </off_color>
+      <on_label>Open</on_label>
+      <on_color>
+        <color name="ERROR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_4</name>
+    <x>20</x>
+    <y>100</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_15</name>
+      <text>Warnings:</text>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_4</name>
+      <pv_name>$(P)$(S)sWarn</pv_name>
+      <x>120</x>
+      <width>100</width>
+      <off_label>Closed</off_label>
+      <off_color>
+        <color name="OK" red="61" green="216" blue="61">
+        </color>
+      </off_color>
+      <on_label>Open</on_label>
+      <on_color>
+        <color name="WARNING" red="252" green="242" blue="17">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_5</name>
+    <x>20</x>
+    <y>460</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_16</name>
+      <text>PP Divider:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_9</name>
+      <pv_name>$(P)$(S)PpDivider:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
   </widget>
 </display>

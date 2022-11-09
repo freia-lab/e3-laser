@@ -1,3 +1,12 @@
+record(bi, "$(P)Laser:getBasicOK") {
+   field(DTYP, "pydev")
+   field(ZNAM, "ERROR")
+   field(ONAM, "OK")
+   field(ZSV, "INVALID")
+   field(INP, "@laser.getBasic()")
+   field(SCAN, "$(SCAN)")
+}
+
 record(mbbi, "$(P)Laser:sState") {
    field(DESC, "Laser state")
    field(DTYP, "pydev")
@@ -26,16 +35,137 @@ record(mbbi, "$(P)Laser:sState") {
    field(SVVL, 8)
    field(SVST, "Failure")
    field(SVSV, "MAJOR")
-   field(SCAN, "10 second")
+   field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
 
-record(bi, "$(P)Laser:getBasicOK") {
+record(bi, "$(P)Laser:sShutterOpen") {
    field(DTYP, "pydev")
-   field(ZNAM, "ERROR")
-   field(ONAM, "OK")
-   field(ZSV, "INVALID")
-   field(INP, "@laser.getBasic()")
-   field(SCAN, "10 second")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@laser.isShutterOpen()")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
 }
+
+record(bi, "$(P)Laser:sOutput") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Disabled")
+   field(ONAM, "Enabled")
+   field(INP, "@laser.isOutputEnabled()")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Laser:sPwrLock") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Disabled")
+   field(ONAM, "Enabled")
+   field(INP, "@laser.isPwrLockEnabled()")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Laser:sErr") {
+   field(DTYP, "pydev")
+   field(ZNAM, "OK")
+   field(ONAM, "Error")
+   field(INP, "@laser.error")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Laser:sWarn") {
+   field(DTYP, "pydev")
+   field(ZNAM, "OK")
+   field(ONAM, "Warning")
+   field(INP, "@laser.warn")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(longin, "$(P)Laser:Harmonic:sRdV") {
+   field(DTYP, "pydev")
+   field(INP, "@laser.harmonic")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(longin, "$(P)Laser:BurstCnt:sRdV") {
+   field(DTYP, "pydev")
+   field(INP, "@laser.burst")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(longin, "$(P)Laser:PulseLength:sRdV") {
+   field(DTYP, "pydev")
+   field(INP, "@laser.plsDur")
+   field(EGU, "fs")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(longin, "$(P)Laser:PpDivider:sRdV") {
+   field(DTYP, "pydev")
+   field(INP, "@laser.ppDivider")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(longin, "$(P)Laser:Atten:sRdV") {
+   field(DTYP, "pydev")
+   field(INP, "@laser.atten")
+   field(EGU, "%")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(ai, "$(P)Laser:outEnergy:sRdV") {
+   field(DTYP, "pydev")
+   field(INP, "@laser.outputEnergy")
+   field(EGU, "µJ")
+   field(PREC, "1")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(ai, "$(P)Laser:outPwr:sRdV") {
+   field(DTYP, "pydev")
+   field(INP, "@laser.outputPwr")
+   field(EGU, "W")
+   field(PREC, "3")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(ai, "$(P)Laser:outFreq:sRdV") {
+   field(DTYP, "pydev")
+   field(INP, "@laser.outputFreq")
+   field(EGU, "kHz")
+   field(PREC, "3")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+############ Commands ##########
+
+#record(longout, "$(P)Laser:Ctrl:Debug:cSetV") {
+#   field(DESC, "Debug output level")
+#   field(DTYP, "pydev")
+#   field(OUT, "@laser.debug='VAL'")
+#}

@@ -31,9 +31,10 @@
       <S>Laser:</S>
     </macros>
     <file>helper-opi-files/laser-stat.bob</file>
-    <x>50</x>
+    <x>30</x>
     <y>60</y>
-    <width>640</width>
-    <height>200</height>
+    <width>280</width>
+    <height>500</height>
+    <border_width>1</border_width>
   </widget>
 </display>
