@@ -31,10 +31,15 @@ ARCH_FILTER += linux-x86_64
 #
 # with $(ASYN_DEP_VERSION) defined in `configure/CONFIG_MODULE`
 
+REQUIRED += pydev
+ifneq ($(strip $(PYDEV_DEP_VERSION)),)
+   pydev_VERSION=$(PYDEV_DEP_VERSION)
+endif
+
 # Since this file (laser.Makefile) is copied into
 # the module directory at build-time, these paths have to be relative
 # to that path
-APP := laserApp
+APP := .
 APPDB := $(APP)/Db
 APPSRC := $(APP)/src
 
@@ -47,15 +52,17 @@ APPSRC := $(APP)/src
 
 TEMPLATES += $(wildcard $(APPDB)/*.db)
 TEMPLATES += $(wildcard $(APPDB)/*.proto)
-TEMPLATES += $(wildcard $(APPDB)/*.template)
+#TEMPLATES += $(wildcard $(APPDB)/*.template)
 
 SCRIPTS += $(wildcard ../iocsh/*.iocsh)
+SCRIPTS += $(wildcard ../tools/carbide/*.py)
 
 # Same as with any source or header files, you can also use $SUBS and $TMPS to define
 # database files to be inflated (using MSI), e.g.
 #
 #     SUBS = $(wildcard $(APPDB)/*.substitutions)
 #     TMPS = $(wildcard $(APPDB)/*.template)
+SUBS = $(wildcard $(APPDB)/*.substitutions)
 
 USR_DBFLAGS += -I . -I ..
 USR_DBFLAGS += -I $(EPICS_BASE)/db

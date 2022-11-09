@@ -1,0 +1,4 @@
+record(longout, "PyDev:Test:HalloWorld") {
+    field(DTYP, "pydev")
+    field(OUT, "@print('Hello World!')")
+}

@@ -11,12 +11,14 @@ def main():
 
     carbide = GetStatus(carbideURL)
     print("\n*** Using URL: "+carbideURL+ " ***")
-    carbide.run()
-
+    while True:
+        carbide.run()
+        time.sleep(2)
 
 class GetStatus:
     baseAddress = None
     state = dict()
+    basic = None
 
     def __init__(self, carbideURL):
         self.baseAddress = carbideURL
@@ -29,6 +31,7 @@ class GetStatus:
            print("OK")
        else:
            print("Error")
+       print("Actual laser state:",self.getLaserState())
        return
        self.getCalibrationInfo()
        self.getShutterState()
@@ -47,35 +50,43 @@ class GetStatus:
     def post(self, url, data):
         return requests.post(self.baseAddress + url, json =data)
     def get(self, url):
-        return requests.get(self.baseAddress + url)
+        return requests.get(self.baseAddress + url, timeout=1.50)
     
     def getBasic(self):
         """Get Basic data"""
-        try:
+        """        try:
             basic = self.get('/Basic').json()
             print("*** Basic properties ***")
 #            print (json.dumps(basic, indent =3))
         except requests.exceptions.ConnectionError as e:
             print(e)
-            return False
+            return 0
         except:
             print("No answer")
-            return False
+            return 0 
+        """
+        response = self.get('/Basic')
+        self.basic = response.json()
+        if not response.ok:
+            return 0
 
-        stnam = basic['ActualStateName']
+        stnam = self.basic['ActualStateName']
         print("\tActual state name:\t", stnam, "(%d)" % self.state[stnam])
-        print("\tActualOutputEnergy:\t", basic['ActualOutputEnergy'])
-        print("\tIsOutputEnabled:\t", basic['IsOutputEnabled'] == True)
-        print("\tActualShutterState:\t", basic['ActualShutterState'])
-        print("\tActualHarmonic:\t\t", basic['ActualHarmonic'])
-        print("\tActualOutputFrequency:\t", basic['ActualOutputFrequency'])
-        print("\tActualOutputPower:\t", basic['ActualOutputPower'])
-        print("\tActualAttenuatorPercentage:\t", basic['ActualAttenuatorPercentage'])
-        print("\tActualPulseDuration:\t", basic['ActualPulseDuration'])
-        print("\tActualBurstPulseCount:\t", basic['ActualBurstPulseCount'])
-        print("\tIsPowerlockEnabled:\t", basic['IsPowerlockEnabled'])
-#        print("\t:\t", basic[''])
-        return True
+        print("\tActualOutputEnergy:\t", self.basic['ActualOutputEnergy'])
+        print("\tIsOutputEnabled:\t", self.basic['IsOutputEnabled'] == True)
+        print("\tActualShutterState:\t", self.basic['ActualShutterState'])
+        print("\tActualHarmonic:\t\t", self.basic['ActualHarmonic'])
+        print("\tActualOutputFrequency:\t", self.basic['ActualOutputFrequency'])
+        print("\tActualOutputPower:\t", self.basic['ActualOutputPower'])
+        print("\tActualAttenuatorPercentage:\t", self.basic['ActualAttenuatorPercentage'])
+        print("\tActualPulseDuration:\t", self.basic['ActualPulseDuration'])
+        print("\tActualBurstPulseCount:\t", self.basic['ActualBurstPulseCount'])
+        print("\tIsPowerlockEnabled:\t", self.basic['IsPowerlockEnabled'])
+#        print("\t:\t", self.basic[''])
+        return 1
+
+    def getLaserState(self):        
+        return self.state[self.basic['ActualStateName']]
 
     def getUserWithAccessRights(self):
         """Get list of users with access rights"""

@@ -1,0 +1,15 @@
+#   iocshLoad("$(laser_DIR)/laser.iocsh", "LASER_IP=xxx.yyy.zzz.nnn")
+
+#- ###                laser iocsh                   ###
+#- ####################################################
+#- >> Mandatory
+#- LASER_IP         - Carbide laser controller IP address
+#-
+
+pydev("import sys")
+pydev("sys.path.append('$(laser_DIR)')")
+
+pydev("from getStatus import GetStatus")
+pydev("laser=GetStatus('http://10.1.251.2:20010/v1')")
+
+dbLoadRecords("laser.db", "P=$(P)")
