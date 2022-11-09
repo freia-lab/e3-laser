@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>laser-stat</name>
+  <width>270</width>
+  <height>500</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>260</width>
+    <height>490</height>
+    <line_color>
+      <color name="BLUE-BORDER" red="47" green="135" blue="148">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+      </color>
+    </background_color>
+  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -37,12 +52,12 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
     <pv_name>$(P)$(S)sState</pv_name>
-    <x>90</x>
+    <x>80</x>
     <y>50</y>
-    <width>150</width>
+    <width>160</width>
     <height>30</height>
     <font>
-      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
@@ -88,8 +103,8 @@
       <pv_name>$(P)$(S)sOutput</pv_name>
       <x>120</x>
       <width>100</width>
-      <off_label>Closed</off_label>
-      <on_label>Open</on_label>
+      <off_label>Disabled</off_label>
+      <on_label>Enabled</on_label>
       <square>true</square>
       <labels_from_pv>true</labels_from_pv>
     </widget>
@@ -111,8 +126,8 @@
       <pv_name>$(P)$(S)sPwrLock</pv_name>
       <x>120</x>
       <width>100</width>
-      <off_label>Closed</off_label>
-      <on_label>Open</on_label>
+      <off_label>Disabled</off_label>
+      <on_label>Enabled</on_label>
       <square>true</square>
       <labels_from_pv>true</labels_from_pv>
     </widget>
@@ -274,12 +289,12 @@
       <pv_name>$(P)$(S)sErr</pv_name>
       <x>120</x>
       <width>100</width>
-      <off_label>Closed</off_label>
+      <off_label>OK</off_label>
       <off_color>
         <color name="OK" red="61" green="216" blue="61">
         </color>
       </off_color>
-      <on_label>Open</on_label>
+      <on_label>Error</on_label>
       <on_color>
         <color name="ERROR" red="252" green="13" blue="27">
         </color>
@@ -305,12 +320,12 @@
       <pv_name>$(P)$(S)sWarn</pv_name>
       <x>120</x>
       <width>100</width>
-      <off_label>Closed</off_label>
+      <off_label>OK</off_label>
       <off_color>
         <color name="OK" red="61" green="216" blue="61">
         </color>
       </off_color>
-      <on_label>Open</on_label>
+      <on_label>Warning</on_label>
       <on_color>
         <color name="WARNING" red="252" green="242" blue="17">
         </color>
