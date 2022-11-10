@@ -1,5 +1,3 @@
-
-
 import time
 import random
 import requests
@@ -9,13 +7,13 @@ import json
 def main():
     carbideURL = 'http://10.1.251.2:20010/v1'
 
-    carbide = GetStatus(carbideURL)
+    carbide = GetLaserStatus(carbideURL)
     print("\n*** Using URL: "+carbideURL+ " ***")
     while True:
         carbide.run()
         time.sleep(2)
 
-class GetStatus:
+class GetLaserStatus:
     debug = 1
     baseAddress = None
     state = dict()
