@@ -8,6 +8,7 @@ record(bi, "$(P)Laser:getBasicOK") {
 }
 
 record(mbbi, "$(P)Laser:sState") {
+   field(PHAS, "1")
    field(DESC, "Laser state")
    field(DTYP, "pydev")
    field(INP, "@laser.getLaserState()")
@@ -41,6 +42,7 @@ record(mbbi, "$(P)Laser:sState") {
 }
 
 record(bi, "$(P)Laser:sShutterOpen") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(ZNAM, "Closed")
    field(ONAM, "Open")
@@ -51,6 +53,7 @@ record(bi, "$(P)Laser:sShutterOpen") {
 }
 
 record(bi, "$(P)Laser:sOutput") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(ZNAM, "Disabled")
    field(ONAM, "Enabled")
@@ -61,6 +64,7 @@ record(bi, "$(P)Laser:sOutput") {
 }
 
 record(bi, "$(P)Laser:sPwrLock") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(ZNAM, "Disabled")
    field(ONAM, "Enabled")
@@ -71,6 +75,7 @@ record(bi, "$(P)Laser:sPwrLock") {
 }
 
 record(bi, "$(P)Laser:sErr") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(ZNAM, "OK")
    field(ONAM, "Error")
@@ -81,6 +86,7 @@ record(bi, "$(P)Laser:sErr") {
 }
 
 record(bi, "$(P)Laser:sWarn") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(ZNAM, "OK")
    field(ONAM, "Warning")
@@ -91,6 +97,7 @@ record(bi, "$(P)Laser:sWarn") {
 }
 
 record(longin, "$(P)Laser:Harmonic:sRdV") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@laser.harmonic")
    field(SCAN, "$(SCAN)")
@@ -99,6 +106,7 @@ record(longin, "$(P)Laser:Harmonic:sRdV") {
 }
 
 record(longin, "$(P)Laser:BurstCnt:sRdV") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@laser.burst")
    field(SCAN, "$(SCAN)")
@@ -107,6 +115,7 @@ record(longin, "$(P)Laser:BurstCnt:sRdV") {
 }
 
 record(longin, "$(P)Laser:PulseLength:sRdV") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@laser.plsDur")
    field(EGU, "fs")
@@ -116,6 +125,7 @@ record(longin, "$(P)Laser:PulseLength:sRdV") {
 }
 
 record(longin, "$(P)Laser:PpDivider:sRdV") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@laser.ppDivider")
    field(SCAN, "$(SCAN)")
@@ -124,6 +134,7 @@ record(longin, "$(P)Laser:PpDivider:sRdV") {
 }
 
 record(longin, "$(P)Laser:Atten:sRdV") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@laser.atten")
    field(EGU, "%")
@@ -133,6 +144,7 @@ record(longin, "$(P)Laser:Atten:sRdV") {
 }
 
 record(ai, "$(P)Laser:outEnergy:sRdV") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@laser.outputEnergy")
    field(EGU, "µJ")
@@ -143,6 +155,7 @@ record(ai, "$(P)Laser:outEnergy:sRdV") {
 }
 
 record(ai, "$(P)Laser:outPwr:sRdV") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@laser.outputPwr")
    field(EGU, "W")
@@ -153,6 +166,7 @@ record(ai, "$(P)Laser:outPwr:sRdV") {
 }
 
 record(ai, "$(P)Laser:outFreq:sRdV") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@laser.outputFreq")
    field(EGU, "kHz")
@@ -164,8 +178,8 @@ record(ai, "$(P)Laser:outFreq:sRdV") {
 
 ############ Commands ##########
 
-#record(longout, "$(P)Laser:Ctrl:Debug:cSetV") {
-#   field(DESC, "Debug output level")
-#   field(DTYP, "pydev")
-#   field(OUT, "@laser.debug='VAL'")
-#}
+record(longout, "$(P)Laser:Ctrl:Debug:cSetV") {
+   field(DESC, "Debug output level")
+   field(DTYP, "pydev")
+   field(OUT, "@laser.debug='VAL'")
+}

@@ -36,4 +36,15 @@
     <width>280</width>
     <height>510</height>
   </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <S>OPA:</S>
+    </macros>
+    <file>helper-opi-files/opa-stat.bob</file>
+    <x>330</x>
+    <y>60</y>
+    <width>280</width>
+    <height>510</height>
+  </widget>
 </display>

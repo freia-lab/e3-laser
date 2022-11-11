@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>opa-stat</name>
+  <width>270</width>
+  <height>500</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>260</width>
+    <height>490</height>
+    <line_color>
+      <color name="BLUE-BORDER" red="47" green="135" blue="148">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>    OPA status</text>
+    <x use_class="true">20</x>
+    <y use_class="true">0</y>
+    <width>230</width>
+    <height use_class="true">50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment use_class="true">0</horizontal_alignment>
+    <vertical_alignment use_class="true">1</vertical_alignment>
+    <wrap_words use_class="true">false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>90</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>Shutter:</text>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(P)$(S)sShutterOpen</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_1</name>
+    <x>20</x>
+    <y>150</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>Shutter open cmd::</text>
+      <width>130</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>$(P)$(S)sShutterOpenIgnored</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>Obeyed</off_label>
+      <off_color>
+        <color name="OK" red="61" green="216" blue="61">
+        </color>
+      </off_color>
+      <on_label>Ignored</on_label>
+      <on_color>
+        <color name="WARNING" red="252" green="242" blue="17">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>430</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>Sweep rate:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_7</name>
+      <pv_name>$(P)$(S)SWS:SweepRt:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>20</x>
+    <y>460</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_13</name>
+      <text>Repeats left:</text>
+      <width>130</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_8</name>
+      <pv_name>$(P)$(S)SWS:RepeatsLeft:sRdV</pv_name>
+      <x>130</x>
+      <width>90</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_3</name>
+    <x>20</x>
+    <y>120</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_14</name>
+      <text>Shutter force closed:</text>
+      <width>140</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>$(P)$(S)sShutterForceClosed</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>No</off_label>
+      <off_color>
+        <color name="OK" red="61" green="216" blue="61">
+        </color>
+      </off_color>
+      <on_label>Yes</on_label>
+      <on_color>
+        <color name="ERROR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_4</name>
+    <x>20</x>
+    <y>180</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_15</name>
+      <text>Interlock:</text>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_4</name>
+      <pv_name>$(P)$(S)sInterlock</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>OK</off_label>
+      <off_color>
+        <color name="OK" red="61" green="216" blue="61">
+        </color>
+      </off_color>
+      <on_label>Error</on_label>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_2</name>
+    <x>20</x>
+    <y>210</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>Conn. to laser:</text>
+      <width>130</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>$(P)$(S)sConn2Laser</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>Error</off_label>
+      <off_color>
+        <color name="ERROR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+      <on_label>OK</on_label>
+      <on_color>
+        <color name="OK" red="61" green="216" blue="61">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>Wavelength:</text>
+    <x>20</x>
+    <y>50</y>
+    <width>120</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(P)$(S)Wavelength:sRdV</pv_name>
+    <x>140</x>
+    <y>50</y>
+    <height>30</height>
+    <font>
+      <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_6</name>
+    <x>20</x>
+    <y>240</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_18</name>
+      <text>Ctrl by laser:</text>
+      <width>130</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_5</name>
+      <pv_name>$(P)$(S)sCtrlByLaser</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>No</off_label>
+      <off_color>
+        <color name="OFF" red="90" green="110" blue="90">
+        </color>
+      </off_color>
+      <on_label>Yes</on_label>
+      <on_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_7</name>
+    <x>20</x>
+    <y>270</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_19</name>
+      <text>Ctrl conf. by laser:</text>
+      <width>140</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_6</name>
+      <pv_name>$(P)$(S)sCtrlConfigOK</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>Config Err</off_label>
+      <off_color>
+        <color name="ERROR" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+      <on_label>Config OK</on_label>
+      <on_color>
+        <color name="OK" red="61" green="216" blue="61">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_8</name>
+    <x>20</x>
+    <y>300</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_20</name>
+      <text>Laser output synced:</text>
+      <width>140</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_7</name>
+      <pv_name>$(P)$(S)sLaserSynced</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>No</off_label>
+      <off_color>
+        <color name="OFF" red="90" green="110" blue="90">
+        </color>
+      </off_color>
+      <on_label>Yes</on_label>
+      <on_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_9</name>
+    <x>20</x>
+    <y>370</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_21</name>
+      <text>State:</text>
+      <width>140</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_8</name>
+      <pv_name>$(P)$(S)SWS:sOn</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>Off</off_label>
+      <off_color>
+        <color name="OFF" red="90" green="110" blue="90">
+        </color>
+      </off_color>
+      <on_label>On</on_label>
+      <on_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_10</name>
+    <x>20</x>
+    <y>400</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_22</name>
+      <text>Stop scheduled:</text>
+      <width>140</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_9</name>
+      <pv_name>$(P)$(S)SWS:sStopScheduled</pv_name>
+      <x>140</x>
+      <width>80</width>
+      <off_label>No</off_label>
+      <off_color>
+        <color name="OFF" red="90" green="110" blue="90">
+        </color>
+      </off_color>
+      <on_label>Yes</on_label>
+      <on_color>
+        <color name="ON" red="70" green="255" blue="70">
+        </color>
+      </on_color>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_23</name>
+    <text>Smooth Wavelength Setter</text>
+    <x>20</x>
+    <y>340</y>
+    <width>220</width>
+    <font>
+      <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+</display>

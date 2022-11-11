@@ -7,6 +7,7 @@ import json
 def main():
     url = "http://10.1.11.11:8004/P21572/v0/PublicAPI"
     opaStatus = GetOPAStatus(url)
+    opaStatus.debug = 6
     opaStatus.run()
 
 
@@ -22,8 +23,14 @@ class GetOPAStatus:
     conn2laserOK = 0
     ctrlByLaser = 0
     ctrlConfiguration = 0
-    laserOutputSynched = 0
+    laserOutputSynced = 0
 
+    """ Smooth Wavesetter system """
+    SWS_On = 0
+    SWS_StopScheduled = 0
+    SWS_SweepRate = 0
+    SWS_RepeatsLeft = 0
+    
     """ Optical system """
     wavelength = 0.0
 
@@ -86,33 +93,39 @@ class GetOPAStatus:
         if self.debug > 1:
             print("Interlock and shutter state:")
         if self.debug > 5:
-            print (state)
+            print (json.dumps(state, indent =3))
         if (state['IsInterlockOpen']):
             self.interlockOpen = 1
-            print ("\tInterlock Open")
+            if self.debug > 1:
+                print ("\tInterlock Open")
         else:
             self.interlockOpen = 0
-            print ("\tInterlock Closed")
+            if self.debug > 1:
+                print ("\tInterlock Closed")
         if (state['IsShutterOpen']):
             self.shutterOpen = 1
-            print ("\tShutter Open")
+            if self.debug > 1:
+                print ("\tShutter Open")
         else:
             self.shutterOpen = 0
-            print ("\tShutter Closed")
+            if self.debug > 1:
+                print ("\tShutter Closed")
         if (state['IsShutterOpenIgnoringTemporarily']):
             self.shutterOpenIgnored = 1
-            print ("\tShutter Open temporarily Ignored")
+            if self.debug > 1:
+                print ("\tShutter Open temporarily Ignored")
         else:
             self.shutterOpenIgnored = 0
         if (state['IsShutterTemporarilyClosedDueSafetyReasons']):
             self.shutterForceClosed = 1
-            print ("\tShutter temporarily Closed due to safety reasons")
+            if self.debug > 1:
+                print ("\tShutter temporarily Closed due to safety reasons")
         else:
             self.shutterForceClosed = 0
 
         for item in state['Shutters']:
             if self.debug > 5:
-                print (item)
+                print (json.dumps(item, indent =3))
             if (not item['IsHidden']):
                 if self.debug > 2:
                     if (state['IsShutterOpen']):
@@ -122,63 +135,85 @@ class GetOPAStatus:
 
         """Get status of shutter control by laser output control (i.e. pulse picker)"""
         state = self.get('/ShutterInterlock/OutputControlWithLaserState').json()
-        if self.debug > 1:
+        if self.debug > 2:
             print("Shutter control by laser output control (pulse picker):")
         if self.debug > 5:
-            print (state)
+            print (json.dumps(state, indent =3))
         if (state['IsConnectionToLaserOk']):
             self.conn2laserOK = 1
-            print ("\tConnection to laser OK")
+            if self.debug > 2:
+                print ("\tConnection to laser OK")
         else:
             self.conn2laserOK = 0
-            print ("\tConnection to laser ERROR")
+            if self.debug > 2:
+                print ("\tConnection to laser ERROR")
         if (state['IsControlByLaserEnabled']):
             self.ctrlByLaser = 1
-            print ("\tControl by laser ENABLED")
+            if self.debug > 2:
+                print ("\tControl by laser ENABLED")
         else:
             self.ctrlByLaser = 0
-            print ("\tControl by laser DISABLED")
+            if self.debug > 2:
+                print ("\tControl by laser DISABLED")
         if (state['IsLaseControlConfiguredOk']):
             self.ctrlConfiguration = 1
-            print ("\tControl configuration OK")
+            if self.debug > 2:
+                print ("\tControl configuration OK")
         else:
             self.ctrlConfiguration = 0
-            print ("\tControl configuration ERROR")
+            if self.debug > 2:
+                print ("\tControl configuration ERROR")
         if (state['IsLaserOutputSynced']):
-            self.laserOutputSynched = 1
-            print ("\tLaser output SYNCED")
+            self.laserOutputSynced = 1
+            if self.debug > 2:
+                print ("\tLaser output SYNCED")
         else:
-            self.laserOutputSynched = 0
-            print ("\tLaser output NOT SYNCED")
+            self.laserOutputSynced = 0
+            if self.debug > 2:
+                print ("\tLaser output NOT SYNCED")
         return 1
 
     def getWavelengthSetterStatus(self):
-        """Get status of the smooth wavelenght setter status"""
+        """Get status of the smooth wavelength setter status"""
         state = self.get('/SmoothWavelengthSetter/Status').json()
         if self.debug > 1:
-            print("Smooth wavelenght setter status:")
+            print("*** Smooth wavelength setter status ***")
         if self.debug > 5:
-            print (state)
+            print (json.dumps(state, indent =3))
         if (state['IsRunning']):
-            print ("\tRunning")
+            self.SWS_On = 1
+            if self.debug > 1:
+                print ("\tRunning")
         else:
-            print ("\tIdle")
+            self.SWS_On = 0
+            if self.debug > 1:
+                print ("\tIdle")
         if (state['IsStopScheduled']):
-            print ("\tStop scheduled")
-        print("\tRate: %d [nm/s]" % state['NanometersPerSecondIncludingStartStop'])
-        print("\tRepeats left: %d" % state['RepeatsLeft'])
+            self.StopScheduled = 1
+            if self.debug > 1:
+                 print ("\tStop scheduled")
+        else:
+             self.StopScheduled = 0
+        self.SWS_SweepRate = state['NanometersPerSecondIncludingStartStop']
+        if self.debug > 1:
+            print("\tRate: %d [nm/s]" % self.SWS_SweepRate)
+        self.SWS_RepeatsLeft = state['RepeatsLeft']
+        if self.debug > 1:
+            print("\tRepeats left: %d" % self.SWS_RepeatsLeft)
         return 1
 
     def getOpticalSystemStatus(self):
         """Get status of the optical system"""
         state = self.get('/Optical/WavelengthControl/Output/Wavelength').json()
-        if self.debug > 1:
+        self.wavelength = state
+        if self.debug > 2:
             print("Optical system status:")
-        if self.debug > 5:
-            print (state)
-        print("\tWavelength: %f nm" % state)
+            print("\tWavelength: %f nm" % self.wavelength)
+            if self.debug > 5:
+                print (json.dumps(state, indent =3))
         state = self.get('/Optical/WavelengthControl/Output/Interaction').json()
-        print("\tIntercation: "+state)
+        if self.debug > 2:
+            print("\tIntercation: "+state)
         state = self.get('/Optical/WavelengthControl/Output').json()
         if self.debug > 5:
             print("*** Wavelength control ***")

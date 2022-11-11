@@ -16,10 +16,12 @@ record(bi, "$(P)OPA:sShutterOpen") {
    field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
+
 record(bi, "$(P)OPA:sShutterOpenIgnored") {
    field(DTYP, "pydev")
    field(ZNAM, "Obeyed")
    field(ONAM, "Ignored")
+   field(OSV, "MINOR")
    field(INP, "@opa.shutterOpenIgnored")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
@@ -27,9 +29,10 @@ record(bi, "$(P)OPA:sShutterOpenIgnored") {
 }
 record(bi, "$(P)OPA:sShutterForceClosed") {
    field(DTYP, "pydev")
-   field(ZNAM, "Inactive")
-   field(ONAM, "Force closed")
-   field(INP, "@opa.shutterForcedClosed")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   field(OSV, "MINOR")
+   field(INP, "@opa.shutterForceClosed")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity
@@ -38,9 +41,9 @@ record(bi, "$(P)OPA:sShutterForceClosed") {
 
 record(bi, "$(P)OPA:sInterlock") {
    field(DTYP, "pydev")
-   field(ZNAM, "Fault")
-   field(ZSV, "MAJOR")
-   field(ONAM, "OK")
+   field(ONAM, "Fault")
+   field(OSV, "MAJOR")
+   field(ZNAM, "OK")
    field(INP, "@opa.interlockOpen")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
@@ -67,10 +70,21 @@ record(bi, "$(P)OPA:sCtrlByLaser") {
    field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
+
+record(bi, "$(P)OPA:sLaserSynced") {
+   field(DTYP, "pydev")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   field(INP, "@opa.laserOutputSynced")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
 record(bi, "$(P)OPA:sCtrlConfigOK") {
    field(DTYP, "pydev")
    field(ZNAM, "Config Err")
-   field(ZSV, "MINOR")
+   field(ZSV, "MAJOR")
    field(ONAM, "Config OK")
    field(INP, "@opa.ctrlConfiguration")
    field(SCAN, "$(SCAN)")
@@ -78,16 +92,82 @@ record(bi, "$(P)OPA:sCtrlConfigOK") {
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
 
+######### Smooth wavesetter system ##########
 
-record(bi, "$(P)OPA:sLaserSynched") {
+record(bi, "$(P)OPA:getSWS_OK") {
+   field(DTYP, "pydev")
+   field(ZNAM, "ERROR")
+   field(ONAM, "OK")
+   field(ZSV, "INVALID")
+   field(INP, "@opa.getWavelengthSetterStatus()")
+   field(SCAN, "$(SCAN)")
+}
+
+record(bi, "$(P)OPA:SWS:sOn") {
+   field(PHAS, "1")
+   field(DTYP, "pydev")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+   field(INP, "@opa.SWS_On")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getSWS_OK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)OPA:SWS:sStopScheduled") {
+   field(PHAS, "1")
    field(DTYP, "pydev")
    field(ZNAM, "No")
    field(ONAM, "Yes")
-   field(INP, "@opa.laserOutputSynched")
+   field(INP, "@opa.SWS_StopScheduled")
    field(SCAN, "$(SCAN)")
-   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(SDIS, "$(P)OPA:getSWS_OK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
+
+record(longin, "$(P)OPA:SWS:RepeatsLeft:sRdV") {
+   field(PHAS, "1")
+   field(DTYP, "pydev")
+   field(INP, "@opa.SWS_RepeatsLeft")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getSWS_OK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(ai, "$(P)OPA:SWS:SweepRt:sRdV") {
+   field(PHAS, "1")
+   field(DTYP, "pydev")
+   field(INP, "@opa.SWS_SweepRate")
+   field(EGU, "nm/s")
+   field(PREC, "1")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getSWS_OK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+
+######### Optical system ####################
+
+record(bi, "$(P)OPA:getOpticalSystemStatusOK") {
+   field(DTYP, "pydev")
+   field(ZNAM, "ERROR")
+   field(ONAM, "OK")
+   field(ZSV, "INVALID")
+   field(INP, "@opa.getOpticalSystemStatus()")
+   field(SCAN, "$(SCAN)")
+}
+
+record(ai, "$(P)OPA:Wavelength:sRdV") {
+   field(PHAS, "1")
+   field(DTYP, "pydev")
+   field(INP, "@opa.wavelength")
+   field(EGU, "nm")
+   field(PREC, "1")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getOpticalSystemStatusOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
 
 ############ Commands ##########
 
