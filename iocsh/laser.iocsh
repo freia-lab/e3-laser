@@ -10,11 +10,17 @@ pydev("import sys")
 pydev("sys.path.append('$(laser_DIR)')")
 
 pydev("from getLaserStatus import GetLaserStatus")
+pydev("from getOPAstatus import GetOPAStatus")
+
 pydev("laser=GetLaserStatus('http://10.1.251.2:20010/v1')")
+pydev("opa=GetOPAStatus('http://10.1.11.11:8004/P21572/v0/PublicAPI')")
+
 
 dbLoadRecords("laser.db", "P=$(P),SCAN=$(SCAN='10 second')")
+dbLoadRecords("opa.db", "P=$(P),SCAN=$(SCAN='10 second')")
 
 # Set debugging output level (0 - no output, higher level - more detailed output)
 
 #pydev("laser.debug=0")
 # or pydev("laser.setDebugLvl(1)")
+#pydev("opa.debug=0")

@@ -1,0 +1,98 @@
+record(bi, "$(P)OPA:getShutterStateOK") {
+   field(DTYP, "pydev")
+   field(ZNAM, "ERROR")
+   field(ONAM, "OK")
+   field(ZSV, "INVALID")
+   field(INP, "@opa.getShutterState()")
+   field(SCAN, "$(SCAN)")
+}
+
+record(bi, "$(P)OPA:sShutterOpen") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@opa.shutterOpen")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+record(bi, "$(P)OPA:sShutterOpenIgnored") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Obeyed")
+   field(ONAM, "Ignored")
+   field(INP, "@opa.shutterOpenIgnored")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+record(bi, "$(P)OPA:sShutterForceClosed") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Inactive")
+   field(ONAM, "Force closed")
+   field(INP, "@opa.shutterForcedClosed")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+
+record(bi, "$(P)OPA:sInterlock") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Fault")
+   field(ZSV, "MAJOR")
+   field(ONAM, "OK")
+   field(INP, "@opa.interlockOpen")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)OPA:sConn2Laser") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Error")
+   field(ZSV, "MAJOR")
+   field(ONAM, "OK")
+   field(INP, "@opa.conn2laserOK")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)OPA:sCtrlByLaser") {
+   field(DTYP, "pydev")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   field(INP, "@opa.ctrlByLaser")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+record(bi, "$(P)OPA:sCtrlConfigOK") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Config Err")
+   field(ZSV, "MINOR")
+   field(ONAM, "Config OK")
+   field(INP, "@opa.ctrlConfiguration")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+
+record(bi, "$(P)OPA:sLaserSynched") {
+   field(DTYP, "pydev")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   field(INP, "@opa.laserOutputSynched")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getShutterStateOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+############ Commands ##########
+
+#record(longout, "$(P)OPA:Ctrl:Debug:cSetV") {
+#   field(DESC, "Debug output level")
+#   field(DTYP, "pydev")
+#   field(OUT, "@opa.debug='VAL'")
+#}
