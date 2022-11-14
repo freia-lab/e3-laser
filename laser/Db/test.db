@@ -1,4 +1,12 @@
-record(longout, "PyDev:Test:HalloWorld") {
+record(ai, "PyDev:Test:ai") {
     field(DTYP, "pydev")
-    field(OUT, "@print('Hello World!')")
+    field(INP, "@tst.getAi()")
+    field(SCAN, "$(SCAN)")
+    field(FLNK, "PyDev:Test:0counter")
+}
+
+record(calc, "PyDev:Test:0counter") {
+    field(INPA, "PyDev:Test:ai")
+    field(INPB, "PyDev:Test:0counter")
+    field(CALC, "A=0?B+1:B")
 }

@@ -32,7 +32,7 @@ class GetOPAStatus:
     SWS_RepeatsLeft = 0
     
     """ Optical system """
-    wavelength = 0.0
+    wavelength = 0
 
     def __init__(self, baseAddress):
         if self.debug > 0:
@@ -201,6 +201,9 @@ class GetOPAStatus:
         if self.debug > 1:
             print("\tRepeats left: %d" % self.SWS_RepeatsLeft)
         return 1
+        
+    def getOutputWavelength(self):
+        return self.get('/Optical/WavelengthControl/Output/Wavelength').json()
 
     def getOpticalSystemStatus(self):
         """Get status of the optical system"""

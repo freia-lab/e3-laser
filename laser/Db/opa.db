@@ -134,12 +134,12 @@ record(longin, "$(P)OPA:SWS:RepeatsLeft:sRdV") {
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
 
-record(ai, "$(P)OPA:SWS:SweepRt:sRdV") {
+record(longin, "$(P)OPA:SWS:SweepRt:sRdV") {
    field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@opa.SWS_SweepRate")
    field(EGU, "nm/s")
-   field(PREC, "1")
+#   field(PREC, "1")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)OPA:getSWS_OK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity
@@ -157,22 +157,33 @@ record(bi, "$(P)OPA:getOpticalSystemStatusOK") {
    field(SCAN, "$(SCAN)")
 }
 
-record(ai, "$(P)OPA:Wavelength:sRdV") {
+record(ai, "$(P)OPA:Wavelength1:sRdV") {
+#   field(PHAS, "1")
+   field(DTYP, "pydev")
+   field(INP, "@opa.getOutputWavelength()")
+   field(EGU, "nm")
+#   field(PREC, "1")
+   field(SCAN, "$(SCAN)")
+#   field(SDIS, "$(P)OPA:getOpticalSystemStatusOK.VAL NPP MS")
+#  field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(longin, "$(P)OPA:Wavelength:sRdV") {
    field(PHAS, "1")
    field(DTYP, "pydev")
    field(INP, "@opa.wavelength")
    field(EGU, "nm")
-   field(PREC, "1")
+#   field(PREC, "1")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)OPA:getOpticalSystemStatusOK.VAL NPP MS")
-   field(DISV, "-1") # Will never disable, but will propagate severity
+  field(DISV, "-1") # Will never disable, but will propagate severity
 }
 
 
 ############ Commands ##########
 
-#record(longout, "$(P)OPA:Ctrl:Debug:cSetV") {
-#   field(DESC, "Debug output level")
-#   field(DTYP, "pydev")
-#   field(OUT, "@opa.debug='VAL'")
-#}
+record(longout, "$(P)OPA:Ctrl:Debug:cSetV") {
+   field(DESC, "Debug output level")
+   field(DTYP, "pydev")
+   field(OUT, "@opa.debug=VAL")
+}

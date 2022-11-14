@@ -8,4 +8,4 @@ epicsEnvShow PYTHONPATH
 
 pydev("laser.debug=0")
 
-pydev("opa.debug=3")
+pydev("opa.debug=0")

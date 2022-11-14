@@ -181,5 +181,5 @@ record(ai, "$(P)Laser:outFreq:sRdV") {
 record(longout, "$(P)Laser:Ctrl:Debug:cSetV") {
    field(DESC, "Debug output level")
    field(DTYP, "pydev")
-   field(OUT, "@laser.debug='VAL'")
+   field(OUT, "@laser.debug=VAL")
 }

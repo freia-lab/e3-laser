@@ -17,7 +17,7 @@ pydev("opa=GetOPAStatus('http://10.1.11.11:8004/P21572/v0/PublicAPI')")
 
 
 dbLoadRecords("laser.db", "P=$(P),SCAN=$(SCAN='10 second')")
-dbLoadRecords("opa.db", "P=$(P),SCAN=$(SCAN='10 second')")
+dbLoadRecords("opa.db", "P=$(P),SCAN=$(SCAN='2 second')")
 
 # Set debugging output level (0 - no output, higher level - more detailed output)
 

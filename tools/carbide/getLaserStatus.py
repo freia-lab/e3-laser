@@ -38,6 +38,7 @@ class GetLaserStatus:
     def run(self):
        if (self.baseAddress is None):
            return
+       self.setDebugLvl(2)
        if self.getBasic():
            print("OK")
        else:
@@ -107,7 +108,7 @@ class GetLaserStatus:
             print("\tWarnings:\t\t", self.basic['Warnings'])
             print("\tErrors:\t\t\t", self.basic['Errors'])
             if self.debug > 1:
-                print("\t:\t", self.basic[''])
+                print (json.dumps(self.basic, indent =3))
         return 1
 
     def getLaserState(self):        

@@ -57,6 +57,7 @@ TEMPLATES += $(wildcard $(APPDB)/*.proto)
 SCRIPTS += $(wildcard ../iocsh/*.iocsh)
 SCRIPTS += $(wildcard ../tools/carbide/*.py)
 SCRIPTS += $(wildcard ../tools/topas4/*.py)
+SCRIPTS += $(wildcard ../tools/test/*.py)
 
 # Same as with any source or header files, you can also use $SUBS and $TMPS to define
 # database files to be inflated (using MSI), e.g.
