@@ -139,7 +139,6 @@ record(longin, "$(P)OPA:SWS:SweepRt:sRdV") {
    field(DTYP, "pydev")
    field(INP, "@opa.SWS_SweepRate")
    field(EGU, "nm/s")
-#   field(PREC, "1")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)OPA:getSWS_OK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity

@@ -143,6 +143,16 @@ record(longin, "$(P)Laser:Atten:sRdV") {
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
 
+record(longin, "$(P)Laser:outFreq:sRdV") {
+   field(PHAS, "1")
+   field(DTYP, "pydev")
+   field(INP, "@laser.outputFreq")
+   field(EGU, "kHz")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
 record(ai, "$(P)Laser:outEnergy:sRdV") {
    field(PHAS, "1")
    field(DTYP, "pydev")
@@ -159,17 +169,6 @@ record(ai, "$(P)Laser:outPwr:sRdV") {
    field(DTYP, "pydev")
    field(INP, "@laser.outputPwr")
    field(EGU, "W")
-   field(PREC, "3")
-   field(SCAN, "$(SCAN)")
-   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
-   field(DISV, "-1") # Will never disable, but will propagate severity
-}
-
-record(ai, "$(P)Laser:outFreq:sRdV") {
-   field(PHAS, "1")
-   field(DTYP, "pydev")
-   field(INP, "@laser.outputFreq")
-   field(EGU, "kHz")
    field(PREC, "3")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
