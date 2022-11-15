@@ -156,6 +156,28 @@ record(bi, "$(P)OPA:getOpticalSystemStatusOK") {
    field(SCAN, "$(SCAN)")
 }
 
+record(mbbi, "$(P)OPA:sInteraction") {
+   field(PHAS, "1")
+   field(DESC, "Interaction state")
+   field(DTYP, "pydev")
+   field(INP, "@opa.interaction")
+   field(ZRVL, 0)
+   field(ZRST, "Unknown")
+   field(ZRSV, "MINOR")
+   field(ONVL, 1)
+   field(ONST, "SIG")
+   field(ONSV, "NO_ALARM")
+   field(TWVL, 2)
+   field(TWST, "IDL")
+   field(TWSV, "NO_ALARM")
+   field(THVL, 3)
+   field(THST, "DFG-SIG")
+   field(THSV, "NO_ALARM")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)OPA:getOpticalSystemStatusOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
 record(ai, "$(P)OPA:Wavelength1:sRdV") {
 #   field(PHAS, "1")
    field(DTYP, "pydev")
@@ -175,7 +197,7 @@ record(longin, "$(P)OPA:Wavelength:sRdV") {
 #   field(PREC, "1")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)OPA:getOpticalSystemStatusOK.VAL NPP MS")
-  field(DISV, "-1") # Will never disable, but will propagate severity
+   field(DISV, "-1") # Will never disable, but will propagate severity
 }
 
 

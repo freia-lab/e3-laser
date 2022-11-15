@@ -32,12 +32,15 @@ class GetOPAStatus:
     SWS_RepeatsLeft = 0
     
     """ Optical system """
+    interactDict = dict()
     wavelength = 0
+    interaction = 0
 
     def __init__(self, baseAddress):
         if self.debug > 0:
             print("Connecting to", baseAddress)
         self.baseAddress = baseAddress
+        self.interactDict = {'SIG': 1, 'IDL': 2, 'DFG-SIG': 3}
 
     def run(self):
        if (self.baseAddress is None):
@@ -205,6 +208,13 @@ class GetOPAStatus:
     def getOutputWavelength(self):
         return self.get('/Optical/WavelengthControl/Output/Wavelength').json()
 
+    def getInteraction(self, ia):
+        try:
+            return interactDict[ia]
+        except KeyError:
+            return 0
+            
+
     def getOpticalSystemStatus(self):
         """Get status of the optical system"""
         state = self.get('/Optical/WavelengthControl/Output/Wavelength').json()
@@ -215,6 +225,7 @@ class GetOPAStatus:
             if self.debug > 5:
                 print (json.dumps(state, indent =3))
         state = self.get('/Optical/WavelengthControl/Output/Interaction').json()
+        self.interaction = getInteraction(state)
         if self.debug > 2:
             print("\tIntercation: "+state)
         state = self.get('/Optical/WavelengthControl/Output').json()
