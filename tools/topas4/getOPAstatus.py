@@ -210,13 +210,29 @@ class GetOPAStatus:
 
     def getInteraction(self, ia):
         try:
-            return interactDict[ia]
+            return self.interactDict[ia]
         except KeyError:
             return 0
             
 
     def getOpticalSystemStatus(self):
         """Get status of the optical system"""
+        state = self.get('/Optical/WavelengthControl/OpticalSystemData').json()
+        output = state['Output']
+        self.wavelength = output['SignalWavelength']
+        if self.debug > 2:
+            print("\tWavelength:\t\t%f nm" % output['Wavelength'])
+            print("\tSignalWavelength:\t%f nm" % output['SignalWavelength'])
+            print("\tIdlerWavelength:\t%f nm" % output['IdlerWavelength'])
+            print("\tActualInteraction:\t%s" % output['ActualInteraction'], "(%d)" % self.getInteraction(output['ActualInteraction']))
+        
+        if self.debug == 4:
+            output = state['Output']
+            print("*** Optical system data [State] **" )
+            print (json.dumps(output, indent =3))
+        if self.debug > 5:
+            print("*** Optical system data ***")
+            print (json.dumps(state, indent =3))
         state = self.get('/Optical/WavelengthControl/Output/Wavelength').json()
         self.wavelength = state
         if self.debug > 2:
@@ -225,7 +241,7 @@ class GetOPAStatus:
             if self.debug > 5:
                 print (json.dumps(state, indent =3))
         state = self.get('/Optical/WavelengthControl/Output/Interaction').json()
-        self.interaction = getInteraction(state)
+        self.interaction = self.getInteraction(state)
         if self.debug > 2:
             print("\tIntercation: "+state)
         state = self.get('/Optical/WavelengthControl/Output').json()
@@ -235,10 +251,6 @@ class GetOPAStatus:
         state = self.get('/Optical/WavelengthControl/ExpandedInteractions').json()
         if self.debug > 5:
             print("*** Expanded interactions ***")
-            print (json.dumps(state, indent =3))
-        state = self.get('/Optical/WavelengthControl/OpticalSystemData').json()
-        if self.debug > 5:
-            print("*** Optical system data ***")
             print (json.dumps(state, indent =3))
         return 1
 

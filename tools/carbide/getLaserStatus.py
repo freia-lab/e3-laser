@@ -74,9 +74,9 @@ class GetLaserStatus:
         self.basic = response.json()
         if not response.ok:
             return 0
-        self.outputFreq = self.basic['ActualOutputFrequency']
-        self.outputEnergy = self.basic['ActualOutputEnergy']
-        self.outputPwr = self.basic['ActualOutputPower']
+        self.outputFreq = 1000 * self.basic['ActualOutputFrequency']
+        self.outputEnergy = 10 * self.basic['ActualOutputEnergy']
+        self.outputPwr = 1000 * self.basic['ActualOutputPower']
         self.atten = self.basic['ActualAttenuatorPercentage']
         self.harmonic = self.basic['ActualHarmonic']
         self.plsDur = self.basic['ActualPulseDuration']
