@@ -39,6 +39,7 @@ record(mbbi, "$(P)Laser:sState") {
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity
+   field(FLNK,  "$(P)Laser:sOn")
 }
 
 record(bi, "$(P)Laser:sShutterOpen") {
@@ -69,6 +70,17 @@ record(bi, "$(P)Laser:sPwrLock") {
    field(ZNAM, "Disabled")
    field(ONAM, "Enabled")
    field(INP, "@laser.isPwrLockEnabled()")
+   field(SCAN, "$(SCAN)")
+   field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Laser:sChirp") {
+   field(PHAS, "1")
+   field(DTYP, "pydev")
+   field(ZNAM, "Negative")
+   field(ONAM, "Positive")
+   field(INP, "@laser.chirpPos")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)Laser:getBasicOK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity
@@ -201,4 +213,12 @@ record(longout, "$(P)Laser:Ctrl:Debug:cSetV") {
    field(DESC, "Debug output level")
    field(DTYP, "pydev")
    field(OUT, "@laser.debug=VAL")
+}
+
+######### Help records ########
+
+# For calculating operation time
+record(calc,  "$(P)Laser:sOn") {
+    field(INPA, "$(P)Laser:sState")
+    field(CALC, "A=3?1:0")
 }

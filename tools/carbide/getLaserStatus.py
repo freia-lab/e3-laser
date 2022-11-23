@@ -25,6 +25,7 @@ class GetLaserStatus:
     atten = None
     harmonic = None
     plsDur = None
+    chirpPos = None
     burst = None
     ppDivider = None
     warn = None
@@ -80,6 +81,11 @@ class GetLaserStatus:
         self.atten = self.basic['ActualAttenuatorPercentage']
         self.harmonic = self.basic['ActualHarmonic']
         self.plsDur = self.basic['ActualPulseDuration']
+        if self.plsDur > 0:
+            self.chirpPos = 1
+        else:
+            self.chirpPos = 0
+            self.plsDur = -self.plsDur
         self.burst = self.basic['ActualBurstPulseCount']
         self.ppDivider = self.basic['ActualPpDivider']
         if  self.basic['Warnings']:
