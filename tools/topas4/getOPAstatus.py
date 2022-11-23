@@ -1,15 +1,6 @@
-import time
-import random
 import requests
 import sys
 import json
-
-def main():
-    url = "http://10.1.11.11:8004/P21572/v0/PublicAPI"
-    opaStatus = GetOPAStatus(url)
-    opaStatus.debug = 6
-    opaStatus.run()
-
 
 class GetOPAStatus:
     baseAddress = None
@@ -41,18 +32,6 @@ class GetOPAStatus:
             print("Connecting to", baseAddress)
         self.baseAddress = baseAddress
         self.interactDict = {'SIG': 1, 'IDL': 2, 'DFG-SIG': 3}
-
-    def run(self):
-       if (self.baseAddress is None):
-           return
-       self.getUserWithAccessRights()
-       self.getCalibrationInfo()
-       self.getShutterState()
-       self.getWavelengthSetterStatus()
-       self.getOpticalSystemStatus()
-       time.sleep(0.2)
-       return
-
 
     def put(self, url, data):
         return requests.put(self.baseAddress + url, json =data)
@@ -238,8 +217,6 @@ class GetOPAStatus:
         if self.debug > 2:
             print("Optical system status:")
             print("\tWavelength: %f nm" % self.wavelength)
-            if self.debug > 5:
-                print (json.dumps(state, indent =3))
         state = self.get('/Optical/WavelengthControl/Output/Interaction').json()
         self.interaction = self.getInteraction(state)
         if self.debug > 2:
@@ -253,11 +230,3 @@ class GetOPAStatus:
             print("*** Expanded interactions ***")
             print (json.dumps(state, indent =3))
         return 1
-
-
-
-if __name__ == "__main__":
-    main()
-
-
-

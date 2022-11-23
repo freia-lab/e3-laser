@@ -1,10 +1,16 @@
-#   iocshLoad("$(laser_DIR)/laser.iocsh", "LASER_IP=xxx.yyy.zzz.nnn")
+#   iocshLoad("$(laser_DIR)/laser.iocsh", "LASER_IP=xxx.yyy.zzz.nnn:port, OPA_IP=XXX.YYY.ZZZ.NNN:PORT")
 
 #- ###                laser iocsh                   ###
 #- ####################################################
 #- >> Mandatory
+#- P		    - PV prefix
 #- LASER_IP         - Carbide laser controller IP address
+#- OPA_IP	    - Optical Power Amplifier IP address
 #-
+#- >> Optional
+#- LASER_PREFIX	    - LASER Rest API prefix (default "v1")
+#- OPA_PREFIX	    - OPA Rest API prefix (default ("P21572/v0/PublicAPI")
+#- SCAN		    - scan period (default "10 second"
 
 pydev("import sys")
 pydev("sys.path.append('$(laser_DIR)')")
@@ -12,8 +18,8 @@ pydev("sys.path.append('$(laser_DIR)')")
 pydev("from getLaserStatus import GetLaserStatus")
 pydev("from getOPAstatus import GetOPAStatus")
 
-pydev("laser=GetLaserStatus('http://10.1.251.2:20010/v1')")
-pydev("opa=GetOPAStatus('http://10.1.11.11:8004/P21572/v0/PublicAPI')")
+pydev("laser=GetLaserStatus('$(LASER_IP)/$(LASER_PREFIX=v1)')")
+pydev("opa=GetOPAStatus('$(OPA_IP)/$(OPA_PREFIX=P21572/v0/PublicAPI)')")
 
 
 dbLoadRecords("laser.db", "P=$(P),SCAN=$(SCAN='10 second')")

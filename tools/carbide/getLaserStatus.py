@@ -1,17 +1,5 @@
-import time
-import random
-import requests
-import sys
 import json
-
-def main():
-    carbideURL = 'http://10.1.251.2:20010/v1'
-
-    carbide = GetLaserStatus(carbideURL)
-    print("\n*** Using URL: "+carbideURL+ " ***")
-    while True:
-        carbide.run()
-        time.sleep(2)
+import requests
 
 class GetLaserStatus:
     debug = 1
@@ -35,18 +23,6 @@ class GetLaserStatus:
     def __init__(self, carbideURL):
         self.baseAddress = carbideURL
         self.state = {'Initializing': 1, 'StandingBy': 2, 'Housekeeping': 3, 'Operational': 4, 'GoingToStandby': 5, 'InFieldUpdate': 6, 'Service': 7, 'Failure': 8}
-
-    def run(self):
-       if (self.baseAddress is None):
-           return
-       self.setDebugLvl(2)
-       if self.getBasic():
-           print("OK")
-       else:
-           print("Error")
-       self.setDebugLvl(0)
-       print("Actual laser state:",self.getLaserState())
-       return
 
     def setDebugLvl(self, level):
         self.debug = level
@@ -137,7 +113,3 @@ class GetLaserStatus:
             return 1
         else:
             return 0
- 
-
-if __name__ == "__main__":
-    main()
