@@ -6,24 +6,29 @@
 #- P		    - PV prefix
 #- LASER_IP         - Carbide laser controller IP address
 #- OPA_IP	    - Optical Power Amplifier IP address
+#- EPP_IP	    - External Pulse Picker IP address
 #-
 #- >> Optional
 #- LASER_PREFIX	    - LASER Rest API prefix (default "v1")
-#- OPA_PREFIX	    - OPA Rest API prefix (default ("P21572/v0/PublicAPI")
-#- SCAN		    - scan period (default "10 second"
+#- OPA_PREFIX	    - OPA Rest API prefix (default "P21572/v0/PublicAPI")
+#- EPP_PREFIX	    - EPP Rest API prefix (default "CarbideSI/ExternalPP")
+#- SCAN		    - scan period (default "10 second")
 
 pydev("import sys")
 pydev("sys.path.append('$(laser_DIR)')")
 
 pydev("from getLaserStatus import GetLaserStatus")
 pydev("from getOPAstatus import GetOPAStatus")
+pydev("from getEPPstatus import GetEPPStatus")
 
 pydev("laser=GetLaserStatus('$(LASER_IP)/$(LASER_PREFIX=v1)')")
 pydev("opa=GetOPAStatus('$(OPA_IP)/$(OPA_PREFIX=P21572/v0/PublicAPI)')")
+pydev("epp=GetEPPStatus('$(EPP_IP)/$(EPP_PREFIX=CarbideSI/ExternalPP)')")
 
 
 dbLoadRecords("laser.db", "P=$(P),SCAN=$(SCAN='10 second')")
-dbLoadRecords("opa.db", "P=$(P),SCAN=$(SCAN='2 second')")
+dbLoadRecords("opa.db", "P=$(P),SCAN=$(SCAN='10 second')")
+dbLoadRecords("epp.db", "P=$(P),SCAN=$(SCAN='10 second')")
 
 # Set debugging output level (0 - no output, higher level - more detailed output)
 

@@ -4,6 +4,7 @@
   <macros>
     <P>Llab-</P>
   </macros>
+  <width>900</width>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -43,6 +44,17 @@
     </macros>
     <file>helper-opi-files/opa-stat.bob</file>
     <x>330</x>
+    <y>60</y>
+    <width>280</width>
+    <height>530</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <S>EPP:</S>
+    </macros>
+    <file>helper-opi-files/epp-stat.bob</file>
+    <x>610</x>
     <y>60</y>
     <width>280</width>
     <height>530</height>
