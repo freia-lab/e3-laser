@@ -17,6 +17,7 @@ def run(opa):
        return
    opa.getUserWithAccessRights()
    opa.getCalibrationInfo()
+   print("*********** Shutters ************")
    opa.getShutterState()
    opa.getWavelengthSetterStatus()
    opa.getOpticalSystemStatus()

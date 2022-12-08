@@ -222,3 +222,24 @@ record(calc,  "$(P)Laser:sOn") {
     field(INPA, "$(P)Laser:sState")
     field(CALC, "A=3?1:0")
 }
+
+# For showinfg the laser status
+record(calc, "$(P)Laser:VisuState") {
+   field(PHAS, "1")
+   field(DESC, "Laser symbol state")
+   field(SCAN, "$(SCAN)")
+   field(INPA, "$(P)Laser:sState")
+   field(INPB,  "$(P)Laser:sShutterOpen")
+   field(CALC, "A=3?1:((A=3)&&(B=1)?2:0)")
+   field(FLNK,  "$(P)Laser:VisuStateStr")
+}
+record(mbbi, "$(P)Laser:VisuStateStr") {
+   field(DESC, "Laser symbol text")
+   field(INP, "$(P)Laser:VisuState")
+   field(ZRVL, 0)
+   field(ZRST, "Beam Off")
+   field(ONVL, 1)
+   field(ONST, "Beam Rdy")
+   field(TWVL, 2)
+   field(TWST, "Beam On")
+}

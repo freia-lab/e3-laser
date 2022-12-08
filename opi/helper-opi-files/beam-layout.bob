@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>beam-layout</name>
+  <macros>
+    <P>Llab-</P>
+  </macros>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Laser beams paths</text>
+    <x use_class="true">20</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height use_class="true">50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment use_class="true">0</horizontal_alignment>
+    <vertical_alignment use_class="true">1</vertical_alignment>
+    <wrap_words use_class="true">false</wrap_words>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <x>570</x>
+    <y>280</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_1</name>
+    <x>340</x>
+    <y>150</y>
+    <width>210</width>
+    <height>330</height>
+    <points>
+      <point x="140.0" y="0.0">
+      </point>
+      <point x="210.0" y="0.0">
+      </point>
+      <point x="210.0" y="80.0">
+      </point>
+      <point x="210.0" y="80.0">
+      </point>
+      <point x="0.0" y="80.0">
+      </point>
+      <point x="0.0" y="260.0">
+      </point>
+      <point x="210.0" y="260.0">
+      </point>
+      <point x="210.0" y="330.0">
+      </point>
+      <point x="160.0" y="330.0">
+      </point>
+    </points>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <macros>
+      <S>Laser:</S>
+    </macros>
+    <x>60</x>
+    <y>70</y>
+    <width>560</width>
+    <height>140</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle</name>
+      <y>10</y>
+      <width>440</width>
+      <height>130</height>
+      <background_color>
+        <color name="GRAY" red="169" green="169" blue="169">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Laser</text>
+      <x>10</x>
+      <y>10</y>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_5</name>
+      <x>320</x>
+      <y>70</y>
+      <height>30</height>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline</name>
+      <x>300</x>
+      <y>33</y>
+      <width>250</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="250.0" y="0.0">
+        </point>
+      </points>
+      <arrows>2</arrows>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>fs beam</text>
+      <x>450</x>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>ps beam</text>
+      <x>450</x>
+      <y>50</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>unknown</text>
+      <x>334</x>
+      <y>73</y>
+    </widget>
+    <widget type="symbol" version="2.0.0">
+      <name>Symbol</name>
+      <pv_name>$(P)$(S)VisuState</pv_name>
+      <symbols>
+        <symbol>Images/laser-green-620x560.png</symbol>
+        <symbol>Images/laser-yellow-620x560.png</symbol>
+        <symbol>Images/laser-red-620x560.png</symbol>
+      </symbols>
+      <x>30</x>
+      <y>20</y>
+      <height>90</height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>$(P)$(S)sState</pv_name>
+      <x>150</x>
+      <y>70</y>
+      <width>160</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>$(P)$(S)VisuStateStr</pv_name>
+      <x>30</x>
+      <y>115</y>
+      <font>
+        <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_14</name>
+      <text>Laser's state</text>
+      <x>150</x>
+      <y>45</y>
+      <width>160</width>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="symbol" version="2.0.0">
+      <name>Symbol_1</name>
+      <pv_name>$(P)$(S)sShutterOpen</pv_name>
+      <symbols>
+        <symbol>Images/shutter-closed.svg</symbol>
+        <symbol>Images/shutter-open.svg</symbol>
+      </symbols>
+      <x>364</x>
+      <y>18</y>
+      <width>30</width>
+      <height>30</height>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <macros>
+      <S>EPP:</S>
+    </macros>
+    <x>120</x>
+    <y>250</y>
+    <width>380</width>
+    <height>120</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_1</name>
+      <width>380</width>
+      <height>120</height>
+      <background_color>
+        <color name="GRAY" red="169" green="169" blue="169">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_4</name>
+      <x>220</x>
+      <width>1</width>
+      <height>120</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="120.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>EPP</text>
+      <x>10</x>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>100%</text>
+      <x>260</x>
+      <y>10</y>
+      <width>80</width>
+      <background_color>
+        <color name="Read_Background" red="230" green="235" blue="232">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>190</x>
+      <y>70</y>
+      <width>60</width>
+      <height>40</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_7</name>
+        <width>60</width>
+        <height>40</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="Background" red="220" green="225" blue="221">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_5</name>
+        <y>10</y>
+        <width>60</width>
+        <points>
+          <point x="0.0" y="10.0">
+          </point>
+          <point x="5.0" y="0.0">
+          </point>
+          <point x="15.0" y="20.0">
+          </point>
+          <point x="25.0" y="0.0">
+          </point>
+          <point x="35.0" y="20.0">
+          </point>
+          <point x="45.0" y="0.0">
+          </point>
+          <point x="55.0" y="20.0">
+          </point>
+          <point x="60.0" y="10.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </line_color>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(P)$(S)Throughput-1:sRdV</pv_name>
+      <x>260</x>
+      <y>55</y>
+      <width>80</width>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>140</x>
+      <y>20</y>
+      <width>110</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_8</name>
+        <x>50</x>
+        <width>60</width>
+        <height>30</height>
+        <background_color>
+          <color name="BACKGROUND" red="220" green="225" blue="221">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_6</name>
+        <y>15</y>
+        <width>50</width>
+        <height>1</height>
+        <points>
+          <point x="50.0" y="0.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+        </points>
+        <arrows>2</arrows>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_6</name>
+        <text>PP</text>
+        <x>50</x>
+        <width>50</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_9</name>
+      <x>70</x>
+      <y>20</y>
+      <width>60</width>
+      <height>30</height>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_13</name>
+      <text>Dump</text>
+      <x>70</x>
+      <y>20</y>
+      <width>50</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>=100-`$(P)$(S)Throughput-1:sRdV`</pv_name>
+      <x>60</x>
+      <y>55</y>
+      <width>80</width>
+      <precision>2</precision>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <macros>
+      <S>OPA:</S>
+    </macros>
+    <x>60</x>
+    <y>380</y>
+    <width>660</width>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_2</name>
+      <y>60</y>
+      <width>440</width>
+      <height>140</height>
+      <background_color>
+        <color name="GRAY" red="169" green="169" blue="169">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>OPA</text>
+      <x>10</x>
+      <y>60</y>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <x>440</x>
+      <y>130</y>
+      <width>130</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="130.0" y="0.0">
+        </point>
+      </points>
+      <arrows>2</arrows>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_3</name>
+      <x>440</x>
+      <y>170</y>
+      <width>130</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="130.0" y="0.0">
+        </point>
+      </points>
+      <arrows>2</arrows>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>660-860 nm</text>
+      <x>510</x>
+      <y>140</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>all other beams</text>
+      <x>510</x>
+      <y>100</y>
+      <width>150</width>
+    </widget>
+    <widget type="symbol" version="2.0.0">
+      <name>Symbol_3</name>
+      <pv_name>$(P)$(S)sShutterOpen</pv_name>
+      <symbols>
+        <symbol>Images/shutter-closed.svg</symbol>
+        <symbol>Images/shutter-open.svg</symbol>
+      </symbols>
+      <x>334</x>
+      <y>15</y>
+      <width>30</width>
+      <height>30</height>
+    </widget>
+  </widget>
+</display>

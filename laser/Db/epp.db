@@ -65,6 +65,17 @@ record(longin, "$(P)EPP:Picker-2:sRdV") {
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
 
+############ Helper records ##########
+
+# Attenuation
+record(calc, "$(P)EPP:Throughput-1:sRdV") {
+   field(SCAN, "$(SCAN)")
+   field(DESC, "Throughput")
+   field(EGU, "%")
+   field(PREC, "2")
+   field(INPA, "$(P)EPP:Picker-1:sRdV")
+   field(CALC, "A=0?100:100*(A-1)/A")
+}
 
 ############ Commands ##########
 

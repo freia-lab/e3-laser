@@ -18,12 +18,12 @@ def main():
 def run(laser):
     if (laser.baseAddress is None):
         return
-    laser.setDebugLvl(2)
+    laser.setDebugLvl(7)
     if laser.getBasic():
         print("OK")
     else:
         print("Error")
-    laser.setDebugLvl(0)
+    laser.setDebugLvl(7)
     print("Actual laser state:",laser.getLaserState())
     return
 

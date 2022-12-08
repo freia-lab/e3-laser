@@ -43,7 +43,7 @@
       <S>OPA:</S>
     </macros>
     <file>helper-opi-files/opa-stat.bob</file>
-    <x>330</x>
+    <x>610</x>
     <y>60</y>
     <width>280</width>
     <height>530</height>
@@ -54,7 +54,7 @@
       <S>EPP:</S>
     </macros>
     <file>helper-opi-files/epp-stat.bob</file>
-    <x>610</x>
+    <x>330</x>
     <y>60</y>
     <width>280</width>
     <height>530</height>

@@ -71,7 +71,7 @@ class GetOPAStatus:
 
     def getShutterState(self):
         """Get status of shutter and interlocks"""
-        state = self.get('/ShutterInterlock/State').json()
+        state = self.get('/ShutterInterlock/State').json()            
         if self.debug > 1:
             print("Interlock and shutter state:")
         if self.debug > 5:

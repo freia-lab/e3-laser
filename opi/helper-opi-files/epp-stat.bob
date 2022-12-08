@@ -3,6 +3,7 @@
   <name>opa-stat</name>
   <width>270</width>
   <height>530</height>
+  <grid_visible>false</grid_visible>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
     <width>260</width>
@@ -57,7 +58,7 @@
       <transparent>true</transparent>
       <widget type="label" version="2.0.0">
         <name>Label_4</name>
-        <text>Output:</text>
+        <text>Shutter:</text>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED</name>
@@ -139,7 +140,7 @@
       <transparent>true</transparent>
       <widget type="label" version="2.0.0">
         <name>Label_5</name>
-        <text>Output:</text>
+        <text>Shutter:</text>
       </widget>
       <widget type="led" version="2.0.0">
         <name>LED_1</name>
