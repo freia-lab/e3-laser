@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>outputs-stat</name>
+  <width>265</width>
+  <height>270</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>260</width>
+    <height>260</height>
+    <line_color>
+      <color name="BLUE-BORDER" red="47" green="135" blue="148">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>        Outputs</text>
+    <x use_class="true">20</x>
+    <y use_class="true">0</y>
+    <width>260</width>
+    <height use_class="true">50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment use_class="true">0</horizontal_alignment>
+    <vertical_alignment use_class="true">1</vertical_alignment>
+    <wrap_words use_class="true">false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>30</x>
+    <y>40</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(P)$(S)MainLaser:sOn</pv_name>
+      <x>160</x>
+      <width>60</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Uncompressed:</name>
+    <x>30</x>
+    <y>70</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>$(P)$(S)SimultOsc:sOn</pv_name>
+      <x>160</x>
+      <width>60</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_2</name>
+    <x>30</x>
+    <y>100</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>$(P)$(S)AutomatedOsc:sOn</pv_name>
+      <x>160</x>
+      <width>60</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_3</name>
+    <x>30</x>
+    <y>130</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>$(P)$(S)UncompAfterPP:sOn</pv_name>
+      <x>160</x>
+      <width>60</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_4</name>
+    <x>30</x>
+    <y>160</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_4</name>
+      <pv_name>$(P)$(S)Uncompressed:sOn</pv_name>
+      <x>160</x>
+      <width>60</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_5</name>
+    <x>30</x>
+    <y>190</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_5</name>
+      <pv_name>$(P)$(S)EPP-1:sOn</pv_name>
+      <x>160</x>
+      <width>60</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_6</name>
+    <x>30</x>
+    <y>220</y>
+    <width>220</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_6</name>
+      <pv_name>$(P)$(S)EPP-2:sOn</pv_name>
+      <x>160</x>
+      <width>60</width>
+      <off_label>Closed</off_label>
+      <on_label>Open</on_label>
+      <square>true</square>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Main laser:</text>
+    <x>20</x>
+    <y>40</y>
+    <width>170</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Simultenous oscilator:</text>
+    <x>20</x>
+    <y>70</y>
+    <width>170</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Automated oscilator:</text>
+    <x>20</x>
+    <y>100</y>
+    <width>170</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Uncompressed after PP:</text>
+    <x>20</x>
+    <y>130</y>
+    <width>170</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Uncompressed:</text>
+    <x>20</x>
+    <y>160</y>
+    <width>170</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>EPP-1:</text>
+    <x>20</x>
+    <y>190</y>
+    <width>170</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>EPP-2:</text>
+    <x>20</x>
+    <y>220</y>
+    <width>170</width>
+  </widget>
+</display>

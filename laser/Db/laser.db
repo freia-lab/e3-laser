@@ -229,8 +229,9 @@ record(calc, "$(P)Laser:VisuState") {
    field(DESC, "Laser symbol state")
    field(SCAN, "$(SCAN)")
    field(INPA, "$(P)Laser:sState")
-   field(INPB,  "$(P)Laser:sShutterOpen")
-   field(CALC, "A=3?1:((A=3)&&(B=1)?2:0)")
+   field(INPB,  "$(P)Outputs:MainLaser:sOn")
+   field(INPC,  "$(P)Outputs:Uncompressed:sOn")
+   field(CALC, "A#3?0:(((B=1)||(C=1))?2:0)")
    field(FLNK,  "$(P)Laser:VisuStateStr")
 }
 record(mbbi, "$(P)Laser:VisuStateStr") {

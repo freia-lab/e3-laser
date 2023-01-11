@@ -39,7 +39,7 @@
     <width>210</width>
     <height>330</height>
     <points>
-      <point x="140.0" y="0.0">
+      <point x="200.0" y="0.0">
       </point>
       <point x="210.0" y="0.0">
       </point>
@@ -91,30 +91,6 @@
         </font>
       </font>
     </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_5</name>
-      <x>320</x>
-      <y>70</y>
-      <height>30</height>
-      <background_color>
-        <color name="BACKGROUND" red="220" green="225" blue="221">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="polyline" version="2.0.0">
-      <name>Polyline</name>
-      <x>300</x>
-      <y>33</y>
-      <width>250</width>
-      <height>1</height>
-      <points>
-        <point x="0.0" y="0.0">
-        </point>
-        <point x="250.0" y="0.0">
-        </point>
-      </points>
-      <arrows>2</arrows>
-    </widget>
     <widget type="label" version="2.0.0">
       <name>Label_4</name>
       <text>fs beam</text>
@@ -125,12 +101,6 @@
       <text>ps beam</text>
       <x>450</x>
       <y>50</y>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_8</name>
-      <text>unknown</text>
-      <x>334</x>
-      <y>73</y>
     </widget>
     <widget type="symbol" version="2.0.0">
       <name>Symbol</name>
@@ -147,8 +117,8 @@
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_1</name>
       <pv_name>$(P)$(S)sState</pv_name>
-      <x>150</x>
-      <y>70</y>
+      <x>140</x>
+      <y>105</y>
       <width>160</width>
       <height>30</height>
       <font>
@@ -172,10 +142,97 @@
     <widget type="label" version="2.0.0">
       <name>Label_14</name>
       <text>Laser's state</text>
-      <x>150</x>
-      <y>45</y>
+      <x>140</x>
+      <y>85</y>
       <width>160</width>
       <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_7</name>
+      <x>334</x>
+      <y>80</y>
+      <width>146</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="146.0" y="0.0">
+        </point>
+      </points>
+      <arrows>2</arrows>
+    </widget>
+    <widget type="symbol" version="2.0.0">
+      <name>Symbol_2</name>
+      <pv_name>$(P)Outputs:Uncompressed:sOn</pv_name>
+      <symbols>
+        <symbol>Images/shutter-closed.svg</symbol>
+        <symbol>Images/shutter-open.svg</symbol>
+      </symbols>
+      <x>364</x>
+      <y>65</y>
+      <width>30</width>
+      <height>30</height>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_1</name>
+      <x>460</x>
+      <y>75</y>
+      <width>20</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="20.0" y="5.0">
+        </point>
+        <point x="0.0" y="10.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_19</name>
+      <text>1030 nm</text>
+      <x>110</x>
+      <y>10</y>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>330</x>
+      <y>29</y>
+      <width>220</width>
+      <height>10</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline</name>
+        <y>5</y>
+        <width>220</width>
+        <height>0</height>
+        <points>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="220.0" y="0.0">
+          </point>
+        </points>
+        <arrows>2</arrows>
+      </widget>
+      <widget type="polygon" version="2.0.0">
+        <name>Polygon</name>
+        <x>200</x>
+        <width>20</width>
+        <height>10</height>
+        <points>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="20.0" y="5.0">
+          </point>
+          <point x="0.0" y="10.0">
+          </point>
+        </points>
+      </widget>
     </widget>
     <widget type="symbol" version="2.0.0">
       <name>Symbol_1</name>
@@ -341,6 +398,20 @@
         <horizontal_alignment>1</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
+      <widget type="polygon" version="2.0.0">
+        <name>Polygon_6</name>
+        <y>10</y>
+        <width>20</width>
+        <height>10</height>
+        <points>
+          <point x="20.0" y="0.0">
+          </point>
+          <point x="0.0" y="5.0">
+          </point>
+          <point x="20.0" y="10.0">
+          </point>
+        </points>
+      </widget>
     </widget>
     <widget type="rectangle" version="2.0.0">
       <name>Rectangle_9</name>
@@ -454,6 +525,100 @@
       <y>15</y>
       <width>30</width>
       <height>30</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_17</name>
+      <text>Wavelength:</text>
+      <x>70</x>
+      <y>130</y>
+      <width>120</width>
+      <height>30</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_5</name>
+      <pv_name>$(P)$(S)Wavelength:sRdV</pv_name>
+      <x>190</x>
+      <y>130</y>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_6</name>
+      <pv_name>$(P)$(S)sInteraction</pv_name>
+      <x>190</x>
+      <y>110</y>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_18</name>
+      <text>Mode:</text>
+      <x>70</x>
+      <y>110</y>
+      <width>120</width>
+      <height>30</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_4</name>
+      <x>550</x>
+      <y>125</y>
+      <width>20</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="20.0" y="5.0">
+        </point>
+        <point x="0.0" y="10.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_3</name>
+      <x>550</x>
+      <y>165</y>
+      <width>20</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="20.0" y="5.0">
+        </point>
+        <point x="0.0" y="10.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_5</name>
+      <x>440</x>
+      <y>95</y>
+      <width>20</width>
+      <height>10</height>
+      <points>
+        <point x="20.0" y="0.0">
+        </point>
+        <point x="0.0" y="5.0">
+        </point>
+        <point x="20.0" y="10.0">
+        </point>
+      </points>
     </widget>
   </widget>
 </display>

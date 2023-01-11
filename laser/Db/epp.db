@@ -65,6 +65,95 @@ record(longin, "$(P)EPP:Picker-2:sRdV") {
    field(DISV, "-1") # Will never disable, but will propagate severity
 }
 
+############# Outputs ###############
+
+record(bi, "$(P)Outputs:getOutputsOK") {
+   field(DTYP, "pydev")
+   field(ZNAM, "ERROR")
+   field(ONAM, "OK")
+   field(ZSV, "INVALID")
+   field(INP, "@epp.getOutputs()")
+   field(SCAN, "$(SCAN)")
+}
+
+record(bi, "$(P)Outputs:MainLaser:sOn") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@epp.outputs[0]")
+   field(SCAN, "$(SCAN)")
+   field(PHAS, "1")
+   field(SDIS, "$(P)Outputs:getOutputsOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Outputs:Uncompressed:sOn") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@epp.outputs[1]")
+   field(SCAN, "$(SCAN)")
+   field(PHAS, "1")
+   field(SDIS, "$(P)Outputs:getOutputsOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Outputs:AutomatedOsc:sOn") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@epp.outputs[2]")
+   field(SCAN, "$(SCAN)")
+   field(PHAS, "1")
+   field(SDIS, "$(P)Outputs:getOutputsOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Outputs:SimultOsc:sOn") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@epp.outputs[3]")
+   field(SCAN, "$(SCAN)")
+   field(PHAS, "1")
+   field(SDIS, "$(P)Outputs:getOutputsOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Outputs:UncompAfterPP:sOn") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@epp.outputs[4]")
+   field(SCAN, "$(SCAN)")
+   field(PHAS, "1")
+   field(SDIS, "$(P)Outputs:getOutputsOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Outputs:EPP-1:sOn") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@epp.outputs[5]")
+   field(SCAN, "$(SCAN)")
+   field(PHAS, "1")
+   field(SDIS, "$(P)Outputs:getOutputsOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+record(bi, "$(P)Outputs:EPP-2:sOn") {
+   field(DTYP, "pydev")
+   field(ZNAM, "Closed")
+   field(ONAM, "Open")
+   field(INP, "@epp.outputs[6]")
+   field(SCAN, "$(SCAN)")
+   field(PHAS, "1")
+   field(SDIS, "$(P)Outputs:getOutputsOK.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+}
+
+
 ############ Helper records ##########
 
 # Attenuation

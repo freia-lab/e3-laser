@@ -12,8 +12,19 @@ class GetEPPStatus:
     atten2 = None
     picker2Val = None
 
+    mainLaserOutput = None
+    simultaneousOcsOutput = None
+    automatedOscOutput = None
+    uncompressedAfterPPoutput = None
+    uncompressedOutput = None
+    EPPoutput1 = None
+    EPPoutput2 = None
+    outputs = [None]*7
+    logicDict = dict()
+    
     def __init__(self, eppURL):
         self.baseAddress = eppURL
+        self.logicDict = {False: 0, True: 1}
 
     def setDebugLvl(self, level):
         self.debug = level
@@ -52,5 +63,30 @@ class GetEPPStatus:
         if self.debug > 0:
             if self.debug > 1:
                 print (json.dumps(self.state, indent =3))
+        return 1
+
+    def getOutputs(self):
+        response = self.get('/../Outputs/Status')
+        data = response.json()
+        if not response.ok:
+            return 0
+        if self.debug > 1:
+            print (json.dumps(data, indent =3))
+        for item in data:
+            self.outputs[item['OutputIndex']] = self.logicDict[item['IsOutputOpen']]
+            if self.debug > 0:
+                print("AttenuatorValue: %f" % item['AttenuatorValue'])
+                print("IsOutputOpen:", item['IsOutputOpen'])
+                print("OutputIndex:", item['OutputIndex'])
+                print("Title:", item['Title'])
+        self.mainLaserOutput = self.outputs[0]
+        self.uncompressedOutput = self.outputs[1]
+        self.automatedOscOutput = self.outputs[2]
+        self.simultaneousOcsOutput = self.outputs[3]
+        self.uncompressedAfterPPoutput = self.outputs[4]
+        self.EPPoutput1 = self.outputs[5]
+        self.EPPoutput2 = self.outputs[6]
+        if self.debug > 0:
+            print("Outputs:", self.outputs)
         return 1
 

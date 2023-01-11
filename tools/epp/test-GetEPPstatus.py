@@ -18,20 +18,29 @@ def main():
 def run(epp):
     if (epp.baseAddress is None):
         return
-    epp.setDebugLvl(2)
-    try:
-        if epp.getStatus():
-            print("Attenuation chan 1: %f" % epp.atten1)
-            print("Attenuation chan 2: %010.3g" % epp.atten2)
-            print("Output 1 open:", epp.output1Open)
-            print("Output 2 open:", epp.output2Open)
-            print("Pulse picker chan 1 value:", epp.picker1Val)
-            print("Pulse picker chan 2 value:", epp.picker2Val)
-        else:
-            print("Error")
-    except:
-        print("No answer")
-        return 0 
+    epp.setDebugLvl(0)
+    if epp.getStatus():
+        print("\n**** EPP Status ****")
+        print("Attenuation chan 1: %f" % epp.atten1)
+        print("Attenuation chan 2: %010.3g" % epp.atten2)
+        print("Output 1 open:", epp.output1Open)
+        print("Output 2 open:", epp.output2Open)
+        print("Pulse picker chan 1 value:", epp.picker1Val)
+        print("Pulse picker chan 2 value:", epp.picker2Val)
+        print("Laser outputs:", epp.getOutputs())
+    else:
+        print("Error in getStatus()")
+    if epp.getOutputs():
+        print("*** Outputs (1 - open, 0 - closed):")
+        print("mainLaser:\t\t", epp.mainLaserOutput)
+        print("uncompressed:\t\t", epp.uncompressedOutput)
+        print("automatedOsc:\t\t", epp.automatedOscOutput)
+        print("simultaneousOcs:\t", epp.simultaneousOcsOutput)
+        print("uncompressedAfterPP:\t", epp.uncompressedAfterPPoutput)
+        print("EPPoutput1:\t\t", epp.EPPoutput1)
+        print("EPPoutput2:\t\t", epp.EPPoutput2)
+    else:
+        print("Error in getOutputs()")
     return
 
 

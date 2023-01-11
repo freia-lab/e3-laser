@@ -5,6 +5,7 @@
     <P>Llab-</P>
   </macros>
   <width>900</width>
+  <height>880</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -58,5 +59,16 @@
     <y>60</y>
     <width>280</width>
     <height>530</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <S>Outputs:</S>
+    </macros>
+    <file>helper-opi-files/outputs-stat.bob</file>
+    <x>330</x>
+    <y>320</y>
+    <width>280</width>
+    <height>270</height>
   </widget>
 </display>

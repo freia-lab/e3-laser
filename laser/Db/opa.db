@@ -173,6 +173,9 @@ record(mbbi, "$(P)OPA:sInteraction") {
    field(THVL, 3)
    field(THST, "DFG-SIG")
    field(THSV, "NO_ALARM")
+   field(FRVL, 4)
+   field(FRST, "SIG 515")
+   field(FRSV, "NO_ALARM")
    field(SCAN, "$(SCAN)")
    field(SDIS, "$(P)OPA:getOpticalSystemStatusOK.VAL NPP MS")
    field(DISV, "-1") # Will never disable, but will propagate severity

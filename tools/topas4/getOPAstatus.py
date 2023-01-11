@@ -31,7 +31,7 @@ class GetOPAStatus:
         if self.debug > 0:
             print("Connecting to", baseAddress)
         self.baseAddress = baseAddress
-        self.interactDict = {'SIG': 1, 'IDL': 2, 'DFG-SIG': 3}
+        self.interactDict = {'SIG': 1, 'IDL': 2, 'DFG-SIG': 3, 'SIG 515': 4}
 
     def put(self, url, data):
         return requests.put(self.baseAddress + url, json =data)

@@ -2,12 +2,12 @@
 <display version="2.0.0">
   <name>opa-stat</name>
   <width>270</width>
-  <height>530</height>
+  <height>280</height>
   <grid_visible>false</grid_visible>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
     <width>260</width>
-    <height>520</height>
+    <height>270</height>
     <line_color>
       <color name="BLUE-BORDER" red="47" green="135" blue="148">
       </color>
@@ -44,7 +44,7 @@
       <N>1</N>
     </macros>
     <x>20</x>
-    <y>60</y>
+    <y>30</y>
     <width>220</width>
     <height>110</height>
     <style>3</style>
@@ -126,7 +126,7 @@
       <N>2</N>
     </macros>
     <x>20</x>
-    <y>360</y>
+    <y>150</y>
     <width>220</width>
     <height>110</height>
     <style>3</style>
