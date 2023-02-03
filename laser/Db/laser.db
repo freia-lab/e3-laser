@@ -238,9 +238,9 @@ record(mbbi, "$(P)Laser:VisuStateStr") {
    field(DESC, "Laser symbol text")
    field(INP, "$(P)Laser:VisuState")
    field(ZRVL, 0)
-   field(ZRST, "Beam Off")
+   field(ZRST, "Laser OFF. Beam OFF")
    field(ONVL, 1)
-   field(ONST, "Beam Rdy")
+   field(ONST, "Laser ON. Beam OFF")
    field(TWVL, 2)
-   field(TWST, "Beam On")
+   field(TWST, "Laser ON. Beam ON")
 }

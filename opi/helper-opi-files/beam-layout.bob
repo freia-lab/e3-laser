@@ -110,15 +110,15 @@
         <symbol>Images/laser-yellow-620x560.png</symbol>
         <symbol>Images/laser-red-620x560.png</symbol>
       </symbols>
-      <x>30</x>
-      <y>20</y>
+      <x>40</x>
+      <y>17</y>
       <height>90</height>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_1</name>
       <pv_name>$(P)$(S)sState</pv_name>
-      <x>140</x>
-      <y>105</y>
+      <x>190</x>
+      <y>102</y>
       <width>160</width>
       <height>30</height>
       <font>
@@ -131,8 +131,9 @@
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_4</name>
       <pv_name>$(P)$(S)VisuStateStr</pv_name>
-      <x>30</x>
-      <y>115</y>
+      <x>10</x>
+      <y>112</y>
+      <width>160</width>
       <font>
         <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
         </font>
@@ -142,8 +143,8 @@
     <widget type="label" version="2.0.0">
       <name>Label_14</name>
       <text>Laser's state</text>
-      <x>140</x>
-      <y>85</y>
+      <x>190</x>
+      <y>82</y>
       <width>160</width>
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
@@ -210,7 +211,7 @@
         <name>Polyline</name>
         <y>5</y>
         <width>220</width>
-        <height>0</height>
+        <height>1</height>
         <points>
           <point x="0.0" y="0.0">
           </point>

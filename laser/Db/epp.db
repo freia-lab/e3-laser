@@ -9,8 +9,8 @@ record(bi, "$(P)EPP:getStatusOK") {
 
 record(bi, "$(P)EPP:Output-1:sOn") {
    field(DTYP, "pydev")
-   field(ZNAM, "Closed")
-   field(ONAM, "Open")
+   field(ZNAM, "Inactive")
+   field(ONAM, "Active")
    field(INP, "@epp.output1Open")
    field(SCAN, "$(SCAN)")
    field(PHAS, "1")
@@ -38,8 +38,8 @@ record(longin, "$(P)EPP:Picker-1:sRdV") {
 
 record(bi, "$(P)EPP:Output-2:sOn") {
    field(DTYP, "pydev")
-   field(ZNAM, "Closed")
-   field(ONAM, "Open")
+   field(ZNAM, "Inactive")
+   field(ONAM, "Active")
    field(INP, "@epp.output2Open")
    field(SCAN, "$(SCAN)")
    field(PHAS, "1")
