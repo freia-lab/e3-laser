@@ -36,7 +36,7 @@
     <x>30</x>
     <y>60</y>
     <width>300</width>
-    <height>560</height>
+    <height>570</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_1</name>
@@ -56,44 +56,16 @@
     </macros>
     <file>helper-opi-files/epp-stat-simple.bob</file>
     <x>330</x>
-    <y>300</y>
+    <y>290</y>
     <width>280</width>
     <height>170</height>
   </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group</name>
-    <macros>
-      <S>Laser:</S>
-    </macros>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <file>helper-opi-files/laser-beam-status.bob</file>
     <x>330</x>
-    <y>470</y>
-    <width>260</width>
-    <height>150</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="symbol" version="2.0.0">
-      <name>Symbol</name>
-      <pv_name>$(P)$(S)VisuState</pv_name>
-      <symbols>
-        <symbol>helper-opi-files/Images/laser-green-620x560.png</symbol>
-        <symbol>helper-opi-files/Images/laser-yellow-620x560.png</symbol>
-        <symbol>helper-opi-files/Images/laser-red-620x560.png</symbol>
-      </symbols>
-      <x>65</x>
-      <width>130</width>
-      <height>110</height>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_4</name>
-      <pv_name>$(P)$(S)VisuStateStr</pv_name>
-      <x>40</x>
-      <y>120</y>
-      <width>180</width>
-      <font>
-        <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
-        </font>
-      </font>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
+    <y>460</y>
+    <width>270</width>
+    <height>170</height>
   </widget>
 </display>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>laser-beam-status</name>
+  <width>270</width>
+  <height>170</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>260</width>
+    <height>160</height>
+    <line_color>
+      <color name="BLUE-BORDER" red="47" green="135" blue="148">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <macros>
+      <S>Laser:</S>
+    </macros>
+    <y>8</y>
+    <width>260</width>
+    <height>150</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="symbol" version="2.0.0">
+      <name>Symbol</name>
+      <pv_name>$(P)$(S)VisuState</pv_name>
+      <symbols>
+        <symbol>../../freia-symbols/laser/laser-green-620x560.png</symbol>
+        <symbol>../../freia-symbols/laser/laser-yellow-620x560.png</symbol>
+        <symbol>../../freia-symbols/laser/laser-red-620x560.png</symbol>
+      </symbols>
+      <x>35</x>
+      <width>130</width>
+      <height>110</height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>$(P)Laser:VisuStateStr</pv_name>
+      <x>10</x>
+      <y>120</y>
+      <width>180</width>
+      <font>
+        <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>150</x>
+      <y>10</y>
+      <width>100</width>
+      <height>60</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 != 2">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)Laser:VisuState</pv_name>
+        </rule>
+      </rules>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>1030 nm</text>
+        <height>30</height>
+        <font>
+          <font name="LARGE-SANS-BOLD" family="Source Sans Pro" style="BOLD" size="21.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_5</name>
+        <pv_name>$(P)OPA:Wavelength:sRdV</pv_name>
+        <y>30</y>
+        <height>30</height>
+        <font>
+          <font name="LARGE-SANS-BOLD" family="Source Sans Pro" style="BOLD" size="21.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+</display>

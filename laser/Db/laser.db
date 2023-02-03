@@ -231,7 +231,7 @@ record(calc, "$(P)Laser:VisuState") {
    field(INPA, "$(P)Laser:sState")
    field(INPB,  "$(P)Outputs:MainLaser:sOn")
    field(INPC,  "$(P)Outputs:Uncompressed:sOn")
-   field(CALC, "A#3?0:(((B=1)||(C=1))?2:0)")
+   field(CALC, "A#3?0:(((B=1)||(C=1))?2:1)")
    field(FLNK,  "$(P)Laser:VisuStateStr")
 }
 record(mbbi, "$(P)Laser:VisuStateStr") {

@@ -106,9 +106,9 @@
       <name>Symbol</name>
       <pv_name>$(P)$(S)VisuState</pv_name>
       <symbols>
-        <symbol>Images/laser-green-620x560.png</symbol>
-        <symbol>Images/laser-yellow-620x560.png</symbol>
-        <symbol>Images/laser-red-620x560.png</symbol>
+        <symbol>../../freia-symbols/laser/laser-green-620x560.png</symbol>
+        <symbol>../../freia-symbols/laser/laser-red-620x560.png</symbol>
+        <symbol>../../freia-symbols/laser/laser-red-620x560.png</symbol>
       </symbols>
       <x>40</x>
       <y>17</y>
@@ -166,8 +166,8 @@
       <name>Symbol_2</name>
       <pv_name>$(P)Outputs:Uncompressed:sOn</pv_name>
       <symbols>
-        <symbol>Images/shutter-closed.svg</symbol>
-        <symbol>Images/shutter-open.svg</symbol>
+        <symbol>../../freia-symbols/laser/shutter-closed.svg</symbol>
+        <symbol>../../freia-symbols/laser/shutter-open.svg</symbol>
       </symbols>
       <x>364</x>
       <y>65</y>
@@ -239,8 +239,8 @@
       <name>Symbol_1</name>
       <pv_name>$(P)$(S)sShutterOpen</pv_name>
       <symbols>
-        <symbol>Images/shutter-closed.svg</symbol>
-        <symbol>Images/shutter-open.svg</symbol>
+        <symbol>../../freia-symbols/laser/shutter-closed.svg</symbol>
+        <symbol>../../freia-symbols/laser/shutter-open.svg</symbol>
       </symbols>
       <x>364</x>
       <y>18</y>
@@ -519,8 +519,8 @@
       <name>Symbol_3</name>
       <pv_name>$(P)$(S)sShutterOpen</pv_name>
       <symbols>
-        <symbol>Images/shutter-closed.svg</symbol>
-        <symbol>Images/shutter-open.svg</symbol>
+        <symbol>../../freia-symbols/laser/shutter-closed.svg</symbol>
+        <symbol>../../freia-symbols/laser/shutter-open.svg</symbol>
       </symbols>
       <x>334</x>
       <y>15</y>
