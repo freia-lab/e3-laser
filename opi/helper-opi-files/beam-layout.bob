@@ -84,7 +84,7 @@
     <widget type="label" version="2.0.0">
       <name>Label_1</name>
       <text>Laser</text>
-      <x>10</x>
+      <x>30</x>
       <y>10</y>
       <font>
         <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
@@ -107,17 +107,17 @@
       <pv_name>$(P)$(S)VisuState</pv_name>
       <symbols>
         <symbol>../../freia-symbols/laser/laser-green-620x560.png</symbol>
-        <symbol>../../freia-symbols/laser/laser-red-620x560.png</symbol>
+        <symbol>../../freia-symbols/laser/laser-yellow-620x560.png</symbol>
         <symbol>../../freia-symbols/laser/laser-red-620x560.png</symbol>
       </symbols>
-      <x>40</x>
+      <x>60</x>
       <y>17</y>
       <height>90</height>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_1</name>
       <pv_name>$(P)$(S)sState</pv_name>
-      <x>190</x>
+      <x>210</x>
       <y>102</y>
       <width>160</width>
       <height>30</height>
@@ -133,7 +133,7 @@
       <pv_name>$(P)$(S)VisuStateStr</pv_name>
       <x>10</x>
       <y>112</y>
-      <width>160</width>
+      <width>190</width>
       <font>
         <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
         </font>
@@ -143,7 +143,7 @@
     <widget type="label" version="2.0.0">
       <name>Label_14</name>
       <text>Laser's state</text>
-      <x>190</x>
+      <x>210</x>
       <y>82</y>
       <width>160</width>
       <horizontal_alignment>1</horizontal_alignment>
@@ -192,7 +192,7 @@
     <widget type="label" version="2.0.0">
       <name>Label_19</name>
       <text>1030 nm</text>
-      <x>110</x>
+      <x>130</x>
       <y>10</y>
       <font>
         <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
