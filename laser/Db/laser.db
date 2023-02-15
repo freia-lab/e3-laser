@@ -231,7 +231,10 @@ record(calc, "$(P)Laser:VisuState") {
    field(INPA, "$(P)Laser:sState")
    field(INPB,  "$(P)Outputs:MainLaser:sOn")
    field(INPC,  "$(P)Outputs:Uncompressed:sOn")
-   field(CALC, "A#3?0:(((B=1)||(C=1))?2:1)")
+   field(INPD, "$(P)Laser:sState.SEVR")
+   field(INPE,  "$(P)Outputs:MainLaser:sOn.SEVR")
+   field(INPF,  "$(P)Outputs:Uncompressed:sOn.SEVR")
+   field(CALC, "(D=3)||(E=3)||(F=3)?3:(A#3?0:(((B=1)||(C=1))?2:1))")
    field(FLNK,  "$(P)Laser:VisuStateStr")
 }
 record(mbbi, "$(P)Laser:VisuStateStr") {
@@ -243,4 +246,6 @@ record(mbbi, "$(P)Laser:VisuStateStr") {
    field(ONST, "Laser ON. Beam OFF")
    field(TWVL, 2)
    field(TWST, "Laser ON. Beam ON")
+   field(THVL, 3)
+   field(THST, "INVALID")
 }
