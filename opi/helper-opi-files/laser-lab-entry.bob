@@ -37,10 +37,15 @@
         <symbol>../../freia-symbols/laser/laser-green-620x560.png</symbol>
         <symbol>../../freia-symbols/laser/laser-yellow-620x560.png</symbol>
         <symbol>../../freia-symbols/laser/laser-red-620x560.png</symbol>
+        <symbol>../../freia-symbols/laser/laser-magenta-620x560.png</symbol>
       </symbols>
       <x>20</x>
       <width>410</width>
       <height>342</height>
+      <disconnect_overlay_color>
+        <color red="149" green="110" blue="221" alpha="213">
+        </color>
+      </disconnect_overlay_color>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_4</name>
