@@ -10,6 +10,7 @@
 core.*
 *-loc/*.Makefile
 laser/*.Makefile
+laser/O.*
 cellMods/
 testMods*/
 *PVs.list
